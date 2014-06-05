@@ -1,3 +1,5 @@
+autoload -Uz is-at-least
+
 # Prompt
 autoload colors
 colors
