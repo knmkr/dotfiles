@@ -16,7 +16,7 @@ fi
 export LESSOPEN="| ${BREW_HOME}/bin/src-hilite-lesspipe.sh %s"
 
 # Git (Homebrew)
-export PATH=`brew info git| awk 'NR==3 {print $1}'`/share/git-core/contrib/diff-highlight:$PATH
+export PATH=${BREW_HOME}/share/git-core/contrib/diff-highlight:$PATH
 
 # Python (Homebrew)
 if [ -f ${BREW_HOME}/bin/virtualenvwrapper.sh ]; then
