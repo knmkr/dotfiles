@@ -1,0 +1,19 @@
+%include ~/.hgrc.local
+
+[ui]
+editor=emacs
+ignore=~/.hgignore_global
+
+[extensions]
+graphlog=
+color=
+pager=
+hgext.convert=
+hgext.bookmarks =
+# hggit =
+mq=
+# histedit=
+progress =
+
+[pager]
+pager=LESS='FSRX' less

@@ -1,0 +1,42 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+__author__ = '$Author$'
+__date__ = '$Date$'
+__version__ = '$Revision$'
+
+# try:
+#     # ipython
+#     import IPython.frontend.terminal.ipapp
+
+#     IPython.frontend.terminal.ipapp.launch_new_instance()
+#     raise SystemExit
+
+# except ImportError:
+#     try:
+#         # TAB complete
+#         import readline
+#         import rlcompleter
+
+#         readline.parse_and_bind('tab: complete')
+
+#     except ImportError:
+#         pass
+
+# import readline
+# import rlcompleter
+
+# readline.parse_and_bind('tab: complete')
+
+# #
+# import atexit
+# import os
+
+# # history file
+# histfile = os.path.join(os.environ['HOME'], '.pythonhistory')
+# try:
+#     readline.read_history_file(histfile)
+# except IOError:
+#     pass
+# atexit.register(readline.write_history_file, histfile)
+# del os, histfile, readline, rlcompleter, atexit

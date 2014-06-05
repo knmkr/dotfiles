@@ -1,0 +1,19 @@
+# emacs
+.elc
+*~
+\#*\#
+.\#*
+
+# zsh
+.zcompdump
+.zhistory
+.zshrc.mine
+
+# osx
+.DS_Store
+
+# python
+*.pyc
+
+# source control
+*.orig

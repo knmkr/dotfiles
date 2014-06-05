@@ -1,0 +1,4 @@
+# export PATH=~/local/bin:$PATH
+
+# R
+R_LIBS="~/R/x86_64-apple-darwin11.2.0-library/2.14"; export R_LIBS

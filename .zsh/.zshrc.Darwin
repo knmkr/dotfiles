@@ -1,0 +1,68 @@
+# ls
+alias ls="ls -G -w"
+
+# MacPorts
+# export PATH=/opt/local/lib:/opt/local/bin:/opt/local/sbin:$PATH
+# export PATH=/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH
+
+# Homebrew
+# FIXME: Suppose homebrew is installed at ~/homebrew or ~/local/brew
+test -d ~/homebrew && BREW_HOME=~/homebrew || BREW_HOME=~/local/brew
+if [ -d ${BREW_HOME} ]; then
+    export PATH=${BREW_HOME}/bin:${BREW_HOME}/sbin:$PATH
+fi
+
+# source-highlight (Homebrew)  $ brew install source-highlight
+export LESSOPEN="| ${BREW_HOME}/bin/src-hilite-lesspipe.sh %s"
+
+# Git (Homebrew)
+export PATH=`brew info git| awk 'NR==3 {print $1}'`/share/git-core/contrib/diff-highlight:$PATH
+
+# Python (Homebrew)
+if [ -f ${BREW_HOME}/bin/virtualenvwrapper.sh ]; then
+    export WORKON_HOME=${HOME}/.virtualenvs
+    source ${BREW_HOME}/bin/virtualenvwrapper.sh
+fi
+export PYTHONPATH=${BREW_HOME}/lib/python2.7/site-packages:$PYTHONPATH
+export PYTHONSTARTUP=~/.pythonstartup
+
+
+# tmux
+if [ -n "$TMUX" ]; then
+    alias pbcopy="reattach-to-user-namespace pbcopy"
+    alias pbpaste="reattach-to-user-namespace pbpaste"
+fi
+
+# Java
+alias javac="javac -J-Dfile.encoding=UTF-8"
+alias java="java -Dfile.encoding=UTF-8"
+
+# ag - The Silver Searcher
+alias ag='ag -S --pager="less -R -F"'
+
+# http://d.hatena.ne.jp/itchyny/20130227/1361933011
+# HTML (Google Chrome.app)
+alias google-chrome='open -a Google\ Chrome'
+alias chrome='google-chrome'
+alias -s {html,htm}=chrome
+# Images (Preview.app)
+alias eog='open -a Preview'
+alias -s {png,jpg,bmp,PNG,JPG,BMP}=eog
+# # Music
+# alias -s {mp3,wav}=mplayer
+
+function backup-dir() {
+    if [ ! $1 ] || [ ! $2 ] || [ $3 ]; then
+        echo "Usage: $0 <src dir> <dest dir>"
+    else
+        rsync --archive --hard-links --extended-attributes --verbose --human-readable --itemize-changes $1 $2
+    fi
+}
+
+function battery() {
+    pmset -g batt| perl -ne 'print "$&\n" if /\d+%/'
+}
+
+function mail_unread() {
+    echo `osascript -e 'tell application "Mail" to unread count of inbox'`
+}
