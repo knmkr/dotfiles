@@ -167,6 +167,9 @@ svn() {
 # bundler
 alias be='bundle exec'
 
+# emacs
+alias e="emacs"
+
 
 # Utils
 # http://d.hatena.ne.jp/itchyny/20130227/1361933011
