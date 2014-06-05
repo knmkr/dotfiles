@@ -273,6 +273,40 @@ function cd() {
     fi
 }
 
+# http://qiita.com/scalper/items/4728afaac9962bf91bfa
+# cdr
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+zstyle ':chpwd:*' recent-dirs-max 5000
+zstyle ':chpwd:*' recent-dirs-default yes
+zstyle ':completion:*' recent-dirs-insert both
+
+# zaw - zsh anything.el-like widget
+# git://github.com/zsh-users/zaw.git
+if [ -f $ZDOTDIR/zaw/zaw.zsh ]; then
+    source $ZDOTDIR/zaw/zaw.zsh
+    zstyle ':filter-select' case-insensitive yes
+    bindkey '^[d' zaw-cdr
+    bindkey '^[g' zaw-git-branches  # gitのブランチ一覧表示, 選択するとcheckout
+    bindkey '^[@' zaw-gitdir        # git管理下(カレントより親も含む)のディレクトリ一覧表示, 選択すると移動
+
+    function zaw-src-gitdir () {
+        _dir=$(git rev-parse --show-cdup 2>/dev/null)
+        if [ $? -eq 0 ]
+        then
+            candidates=( $(git ls-files ${_dir} | perl -MFile::Basename -nle \
+                '$a{dirname $_}++; END{delete $a{"."}; print for sort keys %a}') )
+        fi
+        actions=("zaw-src-gitdir-cd")
+        act_descriptions=("change directory in git repos")
+    }
+
+    function zaw-src-gitdir-cd () {
+        BUFFER="cd $1"
+        zle accept-line
+    }
+    zaw-register-src -n gitdir zaw-src-gitdir
+fi
 
 # Load local settings
 [ -f ~/.zshrc.mine ] && . ~/.zshrc.mine
