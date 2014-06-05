@@ -256,7 +256,7 @@ cdup() {
     zle reset-prompt
 }
 zle -N cdup
-bindkey '\^^' cdup
+bindkey '^[i' cdup
 
 # http://stackoverflow.com/questions/18212540/avoid-an-ls-style-listing-on-actvation-virtualenv-wrapper
 # always `ls` after `cd` (except activate virtualenv)
@@ -290,8 +290,8 @@ if [ -f $ZDOTDIR/zaw/zaw.zsh ]; then
     source $ZDOTDIR/zaw/zaw.zsh
     zstyle ':filter-select' case-insensitive yes
     bindkey '^[d' zaw-cdr
-    bindkey '^[g' zaw-git-branches  # gitのブランチ一覧表示, 選択するとcheckout
-    bindkey '^[@' zaw-gitdir        # git管理下(カレントより親も含む)のディレクトリ一覧表示, 選択すると移動
+    bindkey '^[;' zaw-gitdir        # git管理下(カレントより親も含む)のディレクトリ一覧表示, 選択すると移動
+    bindkey '^[b' zaw-git-branches  # gitのブランチ一覧表示, 選択するとcheckout
 
     function zaw-src-gitdir () {
         _dir=$(git rev-parse --show-cdup 2>/dev/null)
