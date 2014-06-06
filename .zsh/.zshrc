@@ -289,7 +289,7 @@ zstyle ':completion:*' recent-dirs-insert both
 if [ -f $ZDOTDIR/zaw/zaw.zsh ]; then
     source $ZDOTDIR/zaw/zaw.zsh
     zstyle ':filter-select' case-insensitive yes
-    bindkey '^[d' zaw-cdr
+    bindkey '^[/' zaw-cdr
     bindkey '^[;' zaw-gitdir        # git管理下(カレントより親も含む)のディレクトリ一覧表示, 選択すると移動
     bindkey '^[b' zaw-git-branches  # gitのブランチ一覧表示, 選択するとcheckout
 
