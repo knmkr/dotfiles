@@ -8,6 +8,7 @@
 .zcompdump
 .zhistory
 .zshrc.mine
+.chpwd-recent-dirs
 
 # osx
 .DS_Store
