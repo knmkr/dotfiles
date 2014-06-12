@@ -18,3 +18,8 @@
 
 # source control
 *.orig
+
+# IntelliJ
+.idea
+*.iml
+*.iws
