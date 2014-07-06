@@ -8,6 +8,7 @@
 .zcompdump
 .zhistory
 .zshrc.mine
+.chpwd-recent-dirs
 
 # osx
 .DS_Store
@@ -17,3 +18,8 @@
 
 # source control
 *.orig
+
+# IntelliJ
+.idea
+*.iml
+*.iws
