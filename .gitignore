@@ -1,15 +1,14 @@
-.emcs.d/auto-save-list
-.emacs.d/elpa
-.emacs.d/elisp/*.tar.gz
-.emacs.d/elisp/jedi
-.emacs.d/elisp/elisp.d
-.emacs.d/backups
-.emacs.d/misc
-.emacs.d/public_repos
+# Emacs
+.emacs.d/auto-save-list/.saves-*
 .emacs.d/ac-comphist*.dat
-.emacs.d/*.orig
+.emacs.d/backups/[\!\#]*
+.emacs.d/elisp/*.el
+.emacs.d/elisp/*.tar.gz
+.emacs.d/elisp/*/
+.emacs.d/elpa/*/
 *.elc
 
+# Zsh
 .zhistory
 .zcompdump
 .zshrc.mine
