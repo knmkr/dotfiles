@@ -6,6 +6,9 @@
 .emacs.d/elisp/*.tar.gz
 .emacs.d/elisp/*/
 .emacs.d/elpa/*/
+.emacs.d/elpa/*readme.txt
+.emacs.d/.session
+
 *.elc
 
 # Zsh
