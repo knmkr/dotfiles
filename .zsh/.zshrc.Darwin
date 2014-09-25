@@ -23,7 +23,7 @@ if [ -f ${BREW_HOME}/bin/virtualenvwrapper.sh ]; then
     export WORKON_HOME=${HOME}/.virtualenvs
     source ${BREW_HOME}/bin/virtualenvwrapper.sh
 fi
-export PYTHONPATH=${BREW_HOME}/lib/python2.7/site-packages:$PYTHONPATH
+# export PYTHONPATH=${BREW_HOME}/lib/python2.7/site-packages:$PYTHONPATH
 export PYTHONSTARTUP=~/.pythonstartup
 
 
