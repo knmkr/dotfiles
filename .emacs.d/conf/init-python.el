@@ -4,6 +4,12 @@
 ;; Template
 (define-auto-insert "\\.py" "python-template.py")
 
+;; NOTE:
+;; Emacs bulk indent for Python
+;; With python-mode, after marking the block of code,
+;;   * C-c > shifts the region 4 spaces to the right
+;;   * C-c < shifts the region 4 spaces to the left
+
 ;; TODO:
 ;; python auto-complete
 ;; (when (require 'ac-python nil t))
