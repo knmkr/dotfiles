@@ -1,0 +1,21 @@
+# Emacs
+.emacs.d/auto-save-list/.saves-*
+.emacs.d/ac-comphist*.dat
+.emacs.d/backups/[\!\#]*
+.emacs.d/elisp/*.el
+.emacs.d/elisp/*.tar.gz
+.emacs.d/elisp/*/
+.emacs.d/elpa/*/
+.emacs.d/elpa/*readme.txt
+.emacs.d/.session
+
+*.elc
+
+# Zsh
+.zhistory
+.zcompdump
+.zshrc.mine
+.zsh/.chpwd-recent-dirs
+.zsh/zaw
+
+misc

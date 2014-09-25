@@ -51,11 +51,12 @@ alias -s {png,jpg,bmp,PNG,JPG,BMP}=eog
 # # Music
 # alias -s {mp3,wav}=mplayer
 
-function backup-dir() {
+function backup-cloud-dir() {
     if [ ! $1 ] || [ ! $2 ] || [ $3 ]; then
-        echo "Usage: $0 <src dir> <dest dir>"
+        echo "Usage: $0 <src dir> <user>@<host>:<dest dir>"
     else
-        rsync --archive --hard-links --extended-attributes --verbose --human-readable --itemize-changes $1 $2
+        # rsync --archive --hard-links --extended-attributes --verbose --human-readable --itemize-changes $1 $2
+        rsync -av -e ssh --progress --partial --append $1 $2
     fi
 }
 
