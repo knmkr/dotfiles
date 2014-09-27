@@ -1,2 +1,7 @@
 # ls
 alias ls="ls --color=auto --show-control-chars"
+
+# OSX like alias
+alias open='cygstart'
+alias pbcopy='putclip'
+alias pbpaste='getclip'
