@@ -1,3 +1,23 @@
-# ls
 alias ls="ls --color=auto"
 alias emacs="emacs -nw"
+
+# OSX like alias
+# `open`
+if hash xdg-open 2>/dev/null; then
+    alias open='xdg-open'
+elif hash gnome-open 2>/dev/null; then
+    alias open='gnome-open'
+elif hash kde-open 2>/dev/null; then
+    alias open='kde-open'
+else
+fi
+
+# `pbcopy` & `pbpaste`
+if hash xclip 2>/dev/null; then
+    alias pbcopy='xclip -selection clipboard'
+    alias pbpaste='xclip -selection clipboard -o'
+elif hash xsel 2>/dev/null; then
+    alias pbcopy='xsel --clipboard --input'
+    alias pbpaste='xsel --clipboard --output'
+else
+fi
