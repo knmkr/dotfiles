@@ -21,3 +21,8 @@ elif hash xsel 2>/dev/null; then
     alias pbpaste='xsel --clipboard --output'
 else
 fi
+
+# GNU Source-highlight
+if hash source-highlight 2>/dev/null; then
+    export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
+fi

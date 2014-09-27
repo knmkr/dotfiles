@@ -10,8 +10,10 @@ alias pbpaste='getclip'
 # nkf -s < foo.txt | putclip
 
 # GNU Source-highlight
-if hash nkf 2>/dev/null; then
-    export LESSOPEN='| /usr/bin/src-hilite-lesspipe.sh %s | nkf -w'
-else
-    export LESSOPEN='| /usr/bin/src-hilite-lesspipe.sh %s'
+if hash source-highlight 2>/dev/null; then
+    if hash nkf 2>/dev/null; then
+        export LESSOPEN='| /usr/bin/src-hilite-lesspipe.sh %s | nkf -w'
+    else
+        export LESSOPEN='| /usr/bin/src-hilite-lesspipe.sh %s'
+    fi
 fi
