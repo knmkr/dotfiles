@@ -139,13 +139,6 @@ limit -s
 watch="all"                    # 全てのユーザのログイン・ログアウトを監視
 log                            # ログイン時にはすぐに表示する
 
-# http://qiita.com/dvorak__/items/4e365746adc8f56e9764
-for dir in /bin /usr/bin; do
-    for cmd in $(find $dir -perm +6000 -type f -exec basename {} \;); do
-        eval "$cmd() { ( unset LD_LIBRARY_PATH; unset DYLD_LIBRARY_PATH; $dir/$cmd \$*) }"
-    done
-done
-
 
 # Software
 # ruby, rbenv
