@@ -17,7 +17,7 @@
   (package-initialize)
 
   ;;
-  (package-refresh-contents)
+  ;; (package-refresh-contents)
 
   ;; install uninstalled packages
   (defvar my/favorite-packages
