@@ -89,12 +89,16 @@ alias where="command -v"
 alias j="jobs -l"
 alias l="ls"
 alias sl="ls"
-alias la="ls -lhGa"
-alias lt="ls -lhGt"
-alias lx="ls -lhGx"
+alias la="ls -lha"
+alias lt="ls -lht"
+alias lx="ls -lhx"
 alias du="du -h"
 alias df="df -h"
 alias su="su -l"
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias nkf='nkf -w'
 
 
 # History
