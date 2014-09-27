@@ -5,3 +5,10 @@ alias ls="ls --color=auto --show-control-chars"
 alias open='cygstart'
 alias pbcopy='putclip'
 alias pbpaste='getclip'
+
+# GNU Source-highlight
+if hash nkf 2>/dev/null; then
+    export LESSOPEN='| /usr/bin/src-hilite-lesspipe.sh %s | nkf -w'
+else
+    export LESSOPEN='| /usr/bin/src-hilite-lesspipe.sh %s'
+fi
