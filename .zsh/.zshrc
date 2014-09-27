@@ -246,7 +246,17 @@ function hs () {
 
 
 # Load OS-dependent settings
-[ -f $ZDOTDIR/.zshrc.`uname` ] && . $ZDOTDIR/.zshrc.`uname`
+case $OSTYPE in
+    darwin*)
+        . $ZDOTDIR/.zshrc.Darwin
+        ;;
+    linux*)
+        . $ZDOTDIR/.zshrc.Linux
+        ;;
+    cygwin*)
+        . $ZDOTDIR/.zshrc.Cygwin
+        ;;
+esac
 
 
 # `cd`
