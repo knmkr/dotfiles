@@ -35,8 +35,8 @@
       flymake-cursor
       ruby-electric
       ruby-block
+      session
       ;; minibuf-isearch
-      ;; session
       ;; migemo
       ))
 
