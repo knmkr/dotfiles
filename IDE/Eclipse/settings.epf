@@ -1,0 +1,7 @@
+#Sat Oct 04 17:43:12 JST 2014
+file_export_version=3.0
+/instance/org.eclipse.ui/KEY_CONFIGURATION_ID=org.eclipse.ui.emacsAcceleratorConfiguration
+@org.eclipse.ui=3.106.0.v20140812-1751
+@org.eclipse.ui.workbench=3.106.1.v20140827-1737
+/instance/org.eclipse.ui.workbench/org.eclipse.ui.commands=<?xml version\="1.0" encoding\="UTF-8"?>\n<org.eclipse.ui.commands>\n<activeKeyConfiguration keyConfigurationId\="org.eclipse.ui.emacsAcceleratorConfiguration"/>\n</org.eclipse.ui.commands>
+\!/=
