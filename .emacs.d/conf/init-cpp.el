@@ -8,6 +8,7 @@
 
              (c-set-style "linux")
              (setq c-basic-offset tab-width)
+             (c-set-offset 'access-label '0)
 
              (define-key c-mode-base-map "\"" 'electric-pair)
              (define-key c-mode-base-map "\'" 'electric-pair)
