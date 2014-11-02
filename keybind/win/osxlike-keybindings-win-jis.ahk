@@ -18,7 +18,12 @@ vk1Dsc07B & p::Send ^p
 vk1dsc07b & q::Send !{F4}          ; Quit
 vk1Dsc07B & r::Send ^r
 vk1Dsc07B & s::Send ^s
-vk1Dsc07B & t::Send ^t
+vk1Dsc07B & t::
+	If GetKeyState("Shift","P")
+		Send ^+t                   ; cmd+shift+t
+	Else
+		Send ^t                    ; cmd+t
+	Return
 vk1Dsc07B & v::Send ^v
 vk1Dsc07B & w::Send ^w
 vk1Dsc07B & x::Send ^x
@@ -34,21 +39,21 @@ vk1Dsc07B & 8::Send ^8
 vk1Dsc07B & 9::Send ^9
 vk1Dsc07B & 0::Send ^0
 
-; TODO: cmd+shift+t
-; vk1Dsc07B & t::Send ^+t
-
-vk1Dsc07B & {::Send ^{PgUp}        ; Previous tab
-vk1Dsc07B & }::Send ^{PgDn}        ; Next tab
-; vk1Dsc07B & {::Send ^+{Tab}       ; Previous tab
-; vk1Dsc07B & }::Send ^{Tab}        ; Next tab
+vk1Dsc07B & {::Send ^+{Tab}       ; Previous tab
+vk1Dsc07B & }::Send ^{Tab}        ; Next tab
 
 vk1Dsc07B & Tab::AltTab
-; vk1Dsc07B & Tab::ShiftAltTab      ; FIXME
+; ShiftAltTab  ; FIXME
+
+vk1Dsc07B & Up::WinMaximize A  ; #{Up}
+; vk1Dsc07B & Down::
+; vk1Dsc07B & Left::
+; vk1Dsc07B & Right::
 
 vk1Dsc07B & LButton::Send ^{LButton}
 
 ; TODO:
-; Spotlight (cmd+shift+space) to #f
+; Spotlight (cmd+shift+space) to # or #f
 
 ; TODO:
 ; Finder
@@ -90,7 +95,31 @@ SetTitleMatchMode 2  ; a window's title can contain WinTitle anywhere inside it 
 ;; Chrome
 ;; https://support.google.com/chrome/answer/157179?hl=en
 #IfWinActive ahk_class Chrome_WidgetWin_1
-  vk1Dsc07B & i::Send, ^+J               ; open developer tools (cmd-option-i) to ^+J
-  vk1Dsc07B & b::Send, ^+B               ; show/hide bookmark bar (cmd-shift-b) to ^+B
-  vk1Dsc07B & n::Send, ^+N               ; open in secret mode (cmd-shift-n) to ^+N
+  vk1Dsc07B & i::Send ^+J               ; open developer tools (cmd-option-i) to ^+J
+  vk1Dsc07B & b::Send ^+B               ; show/hide bookmark bar (cmd-shift-b) to ^+B
+  vk1Dsc07B & n::Send ^+N               ; open in secret mode (cmd-shift-n) to ^+N
+  ; vk1Dsc07B & Left::Send                ;
+  ; vk1Dsc07B & Right::Send               ;
 #IfWinActive
+
+;; Eclipse
+#IfWinActive ahk_class SWT_Window0
+  vk1Dsc07B & {::Send ^{PgUp}           ; Previous tab
+  vk1Dsc07B & }::Send ^{PgDn}           ; Next tab
+#IfWinActive
+
+;; Explorer
+#IfWinActive ahk_class CabinetWClass
+  ;; Clover
+  vk1Dsc07B & {::Send ^{PgUp}           ; Previous tab
+  vk1Dsc07B & }::Send ^{PgDn}           ; Next tab
+  vk1Dsc07B & b::Send ^+B               ; show/hide bookmark bar (cmd-shift-b) to ^+B
+
+  ;; TortoiseGit
+  vk1Csc079 & l::Run "C:\Program Files\TortoiseGit\bin\TortoiseGitProc.exe" /command:log /path:.
+  vk1Csc079 & d::Run "C:\Program Files\TortoiseGit\bin\TortoiseGitProc.exe" /command:diff /path:.
+  vk1Csc079 & c::Run "C:\Program Files\TortoiseGit\bin\TortoiseGitProc.exe" /command:commit /path:.
+  vk1Csc079 & p::Run "C:\Program Files\TortoiseGit\bin\TortoiseGitProc.exe" /command:push /path:.
+  vk1Csc079 & u::Run "C:\Program Files\TortoiseGit\bin\TortoiseGitProc.exe" /command:pull /path:.
+#IfWinActive
+
