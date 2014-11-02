@@ -116,6 +116,7 @@ SetTitleMatchMode 2  ; a window's title can contain WinTitle anywhere inside it 
   vk1Dsc07B & b::Send ^+B               ; show/hide bookmark bar (cmd-shift-b) to ^+B
 
   ;; TortoiseGit
+  ;; http://tortoisegit.org/docs/tortoisegit/tgit-automation.html
   vk1Csc079 & l::Run "C:\Program Files\TortoiseGit\bin\TortoiseGitProc.exe" /command:log /path:.
   vk1Csc079 & d::Run "C:\Program Files\TortoiseGit\bin\TortoiseGitProc.exe" /command:diff /path:.
   vk1Csc079 & c::Run "C:\Program Files\TortoiseGit\bin\TortoiseGitProc.exe" /command:commit /path:.
@@ -123,3 +124,10 @@ SetTitleMatchMode 2  ; a window's title can contain WinTitle anywhere inside it 
   vk1Csc079 & u::Run "C:\Program Files\TortoiseGit\bin\TortoiseGitProc.exe" /command:pull /path:.
 #IfWinActive
 
+;; Sublime Text
+#IfWinActive ahk_class PX_WINDOW_CLASS
+  vk1Dsc07B & {::Send ^{PgUp}           ; Previous tab
+  vk1Dsc07B & }::Send ^{PgDn}           ; Next tab
+  vk1Csc079 & r::Send ^h                ; Replace
+  vk1Csc079 & `;::Send ^/               ; Toggle comment region
+#IfWinActive
