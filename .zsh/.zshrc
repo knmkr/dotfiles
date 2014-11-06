@@ -55,6 +55,7 @@ esac
 # http://mollifier.hatenablog.com/entry/20090814/p1
 # display VCS(git/hg/svn/...)-[branch]
 autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git hg svn
 zstyle ':vcs_info:*' formats '(%s)-[%b]'
 zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
 precmd () {
