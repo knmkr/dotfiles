@@ -1,0 +1,10 @@
+#Mon Nov 03 01:21:08 JST 2014
+@org.eclipse.ui=3.106.0.v20140519-0906
+@org.eclipse.ui.workbench=3.106.0.v20140530-0732
+/instance/org.eclipse.ui/KEY_CONFIGURATION_ID=org.eclipse.ui.emacsAcceleratorConfiguration
+\!/=
+file_export_version=3.0
+/instance/org.eclipse.jdt.ui/org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+/instance/org.eclipse.ui.workbench/org.eclipse.ui.commands=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<org.eclipse.ui.commands>\r\n<activeKeyConfiguration keyConfigurationId\="org.eclipse.ui.emacsAcceleratorConfiguration"/>\r\n</org.eclipse.ui.commands>
+@org.eclipse.jdt.ui=3.10.0.v20140604-1403
+/instance/org.eclipse.jdt.ui/org.eclipse.jdt.ui.formatterprofiles.version=12
