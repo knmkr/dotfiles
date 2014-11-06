@@ -1,3 +1,5 @@
+fpath=($ZDOTDIR/functions(N-/) $fpath)
+
 autoload -Uz is-at-least
 
 # Prompt
