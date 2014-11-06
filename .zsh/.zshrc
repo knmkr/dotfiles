@@ -325,5 +325,26 @@ if [ -f $ZDOTDIR/zaw/zaw.zsh ]; then
     zaw-register-src -n gitdir zaw-src-gitdir
 fi
 
+# Enter で ls と git status を表示する
+# //github.com/kyanagi/dot.zsh.d/blob/1d0e7d0613d5455d7a31873d6c7326f855518892/zshrc
+function do_enter() {
+    if [ -n "$BUFFER" ]; then
+        zle accept-line
+        return 0
+    fi
+    echo
+    eval ls  # alias を展開したい
+    if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = 'true' ]; then
+        echo
+        echo -e "\e[0;33m--- git status ---\e[0m"
+        git status -sb
+    fi
+    zle reset-prompt
+    return 0
+}
+zle -N do_enter
+bindkey '^m' do_enter
+
+
 # Load local settings
 [ -f ~/.zshrc.mine ] && . ~/.zshrc.mine
