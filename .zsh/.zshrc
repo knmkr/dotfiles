@@ -1,3 +1,5 @@
+fpath=($ZDOTDIR/functions(N-/) $fpath)
+
 autoload -Uz is-at-least
 
 # Prompt
@@ -55,6 +57,7 @@ esac
 # http://mollifier.hatenablog.com/entry/20090814/p1
 # display VCS(git/hg/svn/...)-[branch]
 autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git hg svn
 zstyle ':vcs_info:*' formats '(%s)-[%b]'
 zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
 precmd () {
@@ -257,10 +260,16 @@ setopt auto_cd             # ディレクトリ名と一致した場合 cd
 # setopt autopushd
 # setopt pushd_ignore_dups　
 
+# meta + i で cd ..
+# ただし文字入力中はしない
 cdup() {
-    echo
-    cd ..
-    zle reset-prompt
+    if [[ -z "$BUFFER" ]]; then
+        echo
+        cd ..
+        zle reset-prompt
+    else
+        zle self-insert '^'
+    fi
 }
 zle -N cdup
 bindkey '^[i' cdup
@@ -317,6 +326,27 @@ if [ -f $ZDOTDIR/zaw/zaw.zsh ]; then
     }
     zaw-register-src -n gitdir zaw-src-gitdir
 fi
+
+# Enter で ls と git status を表示する
+# //github.com/kyanagi/dot.zsh.d/blob/1d0e7d0613d5455d7a31873d6c7326f855518892/zshrc
+function do_enter() {
+    if [ -n "$BUFFER" ]; then
+        zle accept-line
+        return 0
+    fi
+    echo
+    eval ls  # alias を展開したい
+    if [ "$(git rev-parse --is-inside-work-tree 2> /dev/null)" = 'true' ]; then
+        echo
+        echo -e "\e[0;33m--- git status ---\e[0m"
+        git status -sb
+    fi
+    zle reset-prompt
+    return 0
+}
+zle -N do_enter
+bindkey '^m' do_enter
+
 
 # Load local settings
 [ -f ~/.zshrc.mine ] && . ~/.zshrc.mine
