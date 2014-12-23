@@ -12,7 +12,7 @@
 ;;
 ;; reference: LaTeX Export for Org Mode < 8.0
 ;;            (http://orgmode.org/worg/org-tutorials/org-latex-export.html)
-(require 'org-latex)
+(when (require 'org-latex nil t))
 ;; (setq org-export-latex-coding-system 'utf-8)
 ;; (setq org-export-latex-date-format "%Y-%m-%d")
 
