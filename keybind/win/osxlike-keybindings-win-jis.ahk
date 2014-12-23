@@ -67,30 +67,38 @@ vk1Csc079 & >::Send ^{End}         ; Go to bottom
 ; vk1Csc079 & `;::Send !`;
 
 
-;; Emacs-like key bindings
-<^b::Send {Left}
-<^f::Send {Right}
-<^p::Send {Up}
-<^n::Send {Down}
-<^a::Send {Home}
-<^e::Send {End}
-<^j::Send {Enter}
-<^h::Send {BS}
-<^d::Send {Delete}
+;; Emacs-like key bindings (except Cygwin)
+#IfWinNotActive ahk_class mintty
+  <^b::Send {Left}
+  <^f::Send {Right}
+  <^p::Send {Up}
+  <^n::Send {Down}
+  <^a::Send {Home}
+  <^e::Send {End}
+  <^j::Send {Enter}
+  <^h::Send {BS}
+  <^d::Send {Delete}
 
-kill_line()
-{
-  Send {ShiftDown}{END}{ShiftUp}
-  Sleep 50  ;[ms]
-  Send ^x
-  Return
-}
-<^k::kill_line()  ; kill line
-<^y::Send ^v      ; yank
-
+  kill_line()
+  {
+    Send {ShiftDown}{END}{ShiftUp}
+    Sleep 50  ;[ms]
+    Send ^x
+    Return
+  }
+  <^k::kill_line()  ; kill line
+  <^y::Send ^v      ; yank
+#IfWinActive
 
 ;; Applications
 SetTitleMatchMode 2  ; a window's title can contain WinTitle anywhere inside it to be a match
+
+;; Cygwin
+#IfWinActive ahk_class mintty
+  vk1Dsc07B & c::Send ^{Ins}
+  vk1Dsc07B & v::Send +{Ins}
+  ; TODO: henkan to alt(meta)
+#IfWinActive
 
 ;; Chrome
 ;; https://support.google.com/chrome/answer/157179?hl=en
@@ -98,6 +106,8 @@ SetTitleMatchMode 2  ; a window's title can contain WinTitle anywhere inside it 
   vk1Dsc07B & i::Send ^+J               ; open developer tools (cmd-option-i) to ^+J
   vk1Dsc07B & b::Send ^+B               ; show/hide bookmark bar (cmd-shift-b) to ^+B
   vk1Dsc07B & n::Send ^+N               ; open in secret mode (cmd-shift-n) to ^+N
+  vk1Dsc07B & {::Send ^{PgUp}           ; Previous tab
+  vk1Dsc07B & }::Send ^{PgDn}           ; Next tab
   ; vk1Dsc07B & Left::Send                ;
   ; vk1Dsc07B & Right::Send               ;
 #IfWinActive
