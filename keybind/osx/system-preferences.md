@@ -1,0 +1,7 @@
+- キーボード > ショートカット
+  - Mission Control ^↑をoff
+  - アプリケーションウィンドウ ^↓をoff
+  - Spotlight 検索フィールドを表示 ctrl+shift+space に変更
+- キーボード > 修飾キー
+  - Control キー を Caps Lock に変更
+  - Caps Lock キー を Control に変更
