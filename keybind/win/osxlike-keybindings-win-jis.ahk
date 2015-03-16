@@ -2,8 +2,14 @@
 WheelUp::Send {WheelDown}
 WheelDown::Send {WheelUp}
 
+;; Disable Katakana-Hiragana
+vkF2sc070::Return
 
 ;; OSX-like key bindings
+
+;; Backslash on "ro" key to underscore
+vkE2sc073::_
+
 ;; Muhenkan
 vk1Dsc07B::Send {vk1Dsc07B}        ; Muhenkan
 vk1Dsc07B & c::Send ^c
@@ -15,17 +21,17 @@ vk1Dsc07B & m::WinMinimize A       ; Minimize active window
 vk1Dsc07B & n::Send ^n
 vk1Dsc07B & o::Send ^o
 vk1Dsc07B & p::Send ^p
-vk1dsc07b & q::Send !{F4}          ; Quit
+vk1dsc07b & q::Send !{F4}          ; Quit (cmd-q)
 vk1Dsc07B & r::Send ^r
 vk1Dsc07B & s::Send ^s
 vk1Dsc07B & t::
-	If GetKeyState("Shift","P")
-		Send ^+t                   ; cmd+shift+t
+	If GetKeyState("Shift")
+		Send ^+t                       ; cmd+shift+t
 	Else
-		Send ^t                    ; cmd+t
+  	Send ^t                        ; cmd+t
 	Return
 vk1Dsc07B & v::Send ^v
-vk1Dsc07B & w::Send ^w
+vk1Dsc07B & w::Send ^{F4}          ; Close window (cmd-w)
 vk1Dsc07B & x::Send ^x
 vk1Dsc07B & z::Send ^z
 vk1Dsc07B & 1::Send ^1
@@ -66,7 +72,6 @@ vk1Csc079 & <::Send ^{Home}        ; Go to top
 vk1Csc079 & >::Send ^{End}         ; Go to bottom
 ; vk1Csc079 & `;::Send !`;
 
-
 ;; Emacs-like key bindings (except Cygwin)
 #IfWinNotActive ahk_class mintty
   <^b::Send {Left}
@@ -78,6 +83,7 @@ vk1Csc079 & >::Send ^{End}         ; Go to bottom
   <^j::Send {Enter}
   <^h::Send {BS}
   <^d::Send {Delete}
+#IfWinNotActive
 
   kill_line()
   {
@@ -86,9 +92,9 @@ vk1Csc079 & >::Send ^{End}         ; Go to bottom
     Send ^x
     Return
   }
-  <^k::kill_line()  ; kill line
-  <^y::Send ^v      ; yank
-#IfWinActive
+
+;  <^k::kill_line()  ; kill line
+;  <^y::Send ^v      ; yank
 
 ;; Applications
 SetTitleMatchMode 2  ; a window's title can contain WinTitle anywhere inside it to be a match
@@ -116,6 +122,21 @@ SetTitleMatchMode 2  ; a window's title can contain WinTitle anywhere inside it 
 #IfWinActive ahk_class SWT_Window0
   vk1Dsc07B & {::Send ^{PgUp}           ; Previous tab
   vk1Dsc07B & }::Send ^{PgDn}           ; Next tab
+  <^/::Send {F9}                        ; Undo
+  <^.::Send {F10}                       ; Redo
+  <^g::Send {Esc}
+  <^[::Send {Esc}
+  vk1Dsc07B & z::
+    If GetKeyState("Shift","P")
+      Send {F10}                   ; cmd+shift+z
+    Else
+      Send {F9}                    ; cmd+z
+    Return
+  vk1Dsc07B & x::Send ^w
+  vk1Dsc07B & c::Send !w
+  vk1Dsc07B & v::Send ^y
+
+  vk1Csc079 & SC027::Send ^/       ; comment out (meta+;)
 #IfWinActive
 
 ;; Explorer
@@ -140,4 +161,10 @@ SetTitleMatchMode 2  ; a window's title can contain WinTitle anywhere inside it 
   vk1Dsc07B & }::Send ^{PgDn}           ; Next tab
   vk1Csc079 & r::Send ^h                ; Replace
   vk1Csc079 & `;::Send ^/               ; Toggle comment region
+#IfWinActive
+
+;; Excel
+#IfWinActive ahk_class XLMAIN
+  vk1Csc079 & d::Send ^d                   ; fill down (Ctrl+D)
+  vk1Csc079 & s::Send {ALTDOWN}e{ALTUP}is  ; fill a series (Alt+E, I, S)
 #IfWinActive
