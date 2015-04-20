@@ -2,7 +2,7 @@
 
 - Current target platforms
   - OSX, iTerm2
-  - Windows7, mintty
+  - Windows7, Cygwin/mintty
   - CentOS/Fedora
 
 - Required software for keybindings
