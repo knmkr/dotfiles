@@ -1,5 +1,8 @@
 # ls
-alias ls="ls --color=auto --show-control-chars"
+#
+# - Ignore Windows system files, such as NTUSER*.
+#
+alias ls="ls --color=auto --show-control-chars --ignore={NTUSER\*,ntuser\*}"
 
 # OSX like alias
 alias open='cygstart'
