@@ -16,10 +16,10 @@
   (add-to-list 'package-archives '("ELPA" . "http://tromey.com/elpa/"))
   (package-initialize)
 
-  ;;
+  ;; [FIXME] To load packages, uncomment out below line
   ;; (package-refresh-contents)
 
-  ;; install uninstalled packages
+  ;; Install packages
   (defvar my/favorite-packages
     '(
       hl-line+
