@@ -1,9 +1,16 @@
 ;; Natural scroll
 WheelUp::Send {WheelDown}
 WheelDown::Send {WheelUp}
+#MaxHotkeysPerInterval 1000
 
+;; Disable Katakana-Hiragana
+vkF2sc070::Return
 
 ;; OSX-like key bindings
+
+;; Backslash on "ro" key to underscore
+vkE2sc073::_
+
 ;; Muhenkan
 vk1Dsc07B::Send {vk1Dsc07B}        ; Muhenkan
 vk1Dsc07B & c::Send ^c
@@ -15,17 +22,17 @@ vk1Dsc07B & m::WinMinimize A       ; Minimize active window
 vk1Dsc07B & n::Send ^n
 vk1Dsc07B & o::Send ^o
 vk1Dsc07B & p::Send ^p
-vk1dsc07b & q::Send !{F4}          ; Quit
+vk1dsc07b & q::Send !{F4}          ; Quit (cmd-q)
 vk1Dsc07B & r::Send ^r
 vk1Dsc07B & s::Send ^s
 vk1Dsc07B & t::
-	If GetKeyState("Shift","P")
-		Send ^+t                   ; cmd+shift+t
+	If GetKeyState("Shift")
+		Send ^+t                       ; cmd+shift+t
 	Else
-		Send ^t                    ; cmd+t
+  	Send ^t                        ; cmd+t
 	Return
 vk1Dsc07B & v::Send ^v
-vk1Dsc07B & w::Send ^w
+vk1Dsc07B & w::Send ^{F4}          ; Close window (cmd-w)
 vk1Dsc07B & x::Send ^x
 vk1Dsc07B & z::Send ^z
 vk1Dsc07B & 1::Send ^1
@@ -66,9 +73,6 @@ vk1Csc079 & <::Send ^{Home}        ; Go to top
 vk1Csc079 & >::Send ^{End}         ; Go to bottom
 ; vk1Csc079 & `;::Send !`;
 
-
-; GroupAdd, Terminal, ahk_class SWT_Window0
-
 ;; Emacs-like key bindings (except Cygwin)
 #IfWinNotActive ahk_class mintty
   <^b::Send {Left}
@@ -80,9 +84,7 @@ vk1Csc079 & >::Send ^{End}         ; Go to bottom
   <^j::Send {Enter}
   <^h::Send {BS}
   <^d::Send {Delete}
-
-  ;; FIXME: Eclipse
-  #IfWinNotActive ahk_class SWT_Window0
+#IfWinNotActive
 
   kill_line()
   {
@@ -91,12 +93,9 @@ vk1Csc079 & >::Send ^{End}         ; Go to bottom
     Send ^x
     Return
   }
-  <^k::kill_line()  ; kill line
-  <^y::Send ^v      ; yank
 
-  #IfWinNotActive
-
-#IfWinNotActive
+;  <^k::kill_line()  ; kill line
+;  <^y::Send ^v      ; yank
 
 ;; Applications
 SetTitleMatchMode 2  ; a window's title can contain WinTitle anywhere inside it to be a match
@@ -106,6 +105,11 @@ SetTitleMatchMode 2  ; a window's title can contain WinTitle anywhere inside it 
   vk1Dsc07B & c::Send ^{Ins}
   vk1Dsc07B & v::Send +{Ins}
   ; TODO: henkan to alt(meta)
+  ; vk1Csc079 & /::Send ???
+  ;  bindkey '^[/' zaw-cdr
+  ;  bindkey '^[;' zaw-gitdir        # git管理下(カレントより親も含む)のディレクトリ一覧表示, 選択すると移動
+  ;  bindkey '^[b' zaw-git-branches  # gitのブランチ一覧表示, 選択するとcheckout
+
 #IfWinActive
 
 ;; Chrome
@@ -137,7 +141,17 @@ SetTitleMatchMode 2  ; a window's title can contain WinTitle anywhere inside it 
   vk1Dsc07B & x::Send ^w
   vk1Dsc07B & c::Send !w
   vk1Dsc07B & v::Send ^y
+
+  vk1Csc079 & SC027::Send ^/       ; comment out (meta+;)
 #IfWinActive
+
+pwd()
+{
+    WinGetText, winText
+    RegExMatch(winText, "\s(.*)", SubPat)
+    return SubPat
+    ;; MsgBox, %SubPat%
+}
 
 ;; Explorer
 #IfWinActive ahk_class CabinetWClass
@@ -148,7 +162,7 @@ SetTitleMatchMode 2  ; a window's title can contain WinTitle anywhere inside it 
 
   ;; TortoiseGit
   ;; http://tortoisegit.org/docs/tortoisegit/tgit-automation.html
-  vk1Csc079 & l::Run "C:\Program Files\TortoiseGit\bin\TortoiseGitProc.exe" /command:log /path:.
+  vk1Csc079 & l::Run "C:\Program Files\TortoiseGit\bin\TortoiseGitProc.exe" /command:log /path:
   vk1Csc079 & d::Run "C:\Program Files\TortoiseGit\bin\TortoiseGitProc.exe" /command:diff /path:.
   vk1Csc079 & c::Run "C:\Program Files\TortoiseGit\bin\TortoiseGitProc.exe" /command:commit /path:.
   vk1Csc079 & p::Run "C:\Program Files\TortoiseGit\bin\TortoiseGitProc.exe" /command:push /path:.
