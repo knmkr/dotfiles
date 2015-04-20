@@ -1,6 +1,6 @@
 # dotfiles
 
-- Supported Platforms
+- Current target platforms
   - OSX, iTerm2
   - Windows7, mintty
   - CentOS/Fedora
