@@ -104,12 +104,18 @@ SetTitleMatchMode 2  ; a window's title can contain WinTitle anywhere inside it 
 #IfWinActive ahk_class mintty
   vk1Dsc07B & c::Send ^{Ins}
   vk1Dsc07B & v::Send +{Ins}
-  ; TODO: henkan to alt(meta)
-  ; vk1Csc079 & /::Send ???
-  ;  bindkey '^[/' zaw-cdr
-  ;  bindkey '^[;' zaw-gitdir        # git管理下(カレントより親も含む)のディレクトリ一覧表示, 選択すると移動
-  ;  bindkey '^[b' zaw-git-branches  # gitのブランチ一覧表示, 選択するとcheckout
 
+  ; Henkan to meta-key for zsh/emacs/...
+  vk1Csc079 & i::Send {ALTDOWN}i{ALTUP}          ; M-i
+  vk1Csc079 & /::Send {ALTDOWN}/{ALTUP}          ; M-/
+  vk1Csc079 & b::Send {ALTDOWN}b{ALTUP}          ; M-b
+  vk1Csc079 & SC027::Send {ALTDOWN}SC027{ALTUP}  ; M-
+  vk1Csc079 & x::Send {ALTDOWN}x{ALTUP}          ; M-x
+  vk1Csc079 & r::Send {ALTDOWN}r{ALTUP}          ; M-r
+  vk1Csc079 & w::Send {ALTDOWN}w{ALTUP}          ; M-w
+  vk1Csc079 & u::Send {ALTDOWN}u{ALTUP}          ; M-u
+  vk1Csc079 & l::Send {ALTDOWN}l{ALTUP}          ; M-l
+  vk1Csc079 & c::Send {ALTDOWN}c{ALTUP}          ; M-c
 #IfWinActive
 
 ;; Chrome
