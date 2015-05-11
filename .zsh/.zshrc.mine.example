@@ -1,4 +1,8 @@
+# DOTFILES_PATH=/path/to/dotfiles
 # export PATH=~/local/bin:$PATH
+
+# Git contrib/diff-highlight
+# export PATH=${DOTFILES_PATH}/VCS/git/contrib/diff-highlight:$PATH
 
 # Java
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home
