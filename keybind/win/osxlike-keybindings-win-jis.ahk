@@ -3,8 +3,8 @@ WheelUp::Send {WheelDown}
 WheelDown::Send {WheelUp}
 #MaxHotkeysPerInterval 1000
 
-;; Disable Katakana-Hiragana
-vkF2sc070::Return
+vkF2sc070::Return  ; Disable Katakana-Hiragana
+sc029::Return      ; Disable Zenkaku-Hankaku
 
 ;; OSX-like key bindings
 
