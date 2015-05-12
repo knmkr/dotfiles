@@ -263,16 +263,11 @@ setopt auto_cd             # ディレクトリ名と一致した場合 cd
 # setopt autopushd
 # setopt pushd_ignore_dups　
 
-# meta + i で cd ..
-# ただし文字入力中はしない
+# Bind `M-i` to `cd ..`
 cdup() {
-    if [[ -z "$BUFFER" ]]; then
-        echo
-        cd ..
-        zle reset-prompt
-    else
-        zle self-insert '^'
-    fi
+    echo
+    cd ..
+    zle reset-prompt
 }
 zle -N cdup
 bindkey '^[i' cdup
