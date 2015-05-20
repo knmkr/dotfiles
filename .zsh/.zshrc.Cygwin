@@ -20,3 +20,7 @@ if hash source-highlight 2>/dev/null; then
         export LESSOPEN='| /usr/bin/src-hilite-lesspipe.sh %s'
     fi
 fi
+
+# tmux
+bindkey ";5C" forward-word
+bindkey ";5D" backward-word

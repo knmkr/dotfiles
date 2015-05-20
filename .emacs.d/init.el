@@ -84,6 +84,12 @@
 (define-key global-map (kbd "C-x C-g") 'goto-line)
 (define-key global-map (kbd "M-r") 'replace-string)
 
+;; tmux
+(global-set-key "\M-[1;5A" [C-up])
+(global-set-key "\M-[1;5B" [C-down])
+(global-set-key "\M-[1;5C" [C-right])
+(global-set-key "\M-[1;5D" [C-left])
+
 (defun other-window-or-split ()
   "Goto other window, or split window"
   (interactive)
