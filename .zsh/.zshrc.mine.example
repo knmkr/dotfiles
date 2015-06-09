@@ -14,4 +14,4 @@
 # Proxy
 # export HTTPS_PROXY=http://<login_internet>:<password_internet>@aproxy:aport
 # export HTTP_PROXY=http://<login_internet>:<password_internet>@aproxy:aport
-# export NO_PROXY=localhost,127.0.0.0/8,my.company
+# export NO_PROXY=localhost,127.0.0.1,my.company
