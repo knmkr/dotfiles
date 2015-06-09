@@ -5,11 +5,11 @@
 # export PATH=${DOTFILES_PATH}/VCS/git/contrib/diff-highlight:$PATH
 
 # Java
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home
-export DERBY_HOME=$JAVA_HOME/db
+# export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home
+# export DERBY_HOME=$JAVA_HOME/db
 
 # R
-export R_LIBS=~/R/x86_64-apple-darwin11.2.0-library/2.14
+# export R_LIBS=~/R/x86_64-apple-darwin11.2.0-library/2.14
 
 # Proxy
 # export HTTPS_PROXY=http://<login_internet>:<password_internet>@aproxy:aport
