@@ -5,3 +5,11 @@
 [github]
 	user = knmkr
 	token = tokentokentoken
+
+# If your network blocks the git protocols,
+# set the following to use `https:` instead of `git:`.
+#
+# cf: https://github.com/ekg/freebayes/issues/63#
+#
+[url "https://github.com/"]
+	insteadOf = git://github.com/

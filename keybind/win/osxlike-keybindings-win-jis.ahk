@@ -186,5 +186,6 @@ pwd()
 ;; Excel
 #IfWinActive ahk_class XLMAIN
   vk1Csc079 & d::Send ^d                   ; fill down (Ctrl+D)
-  vk1Csc079 & s::Send {ALTDOWN}e{ALTUP}is  ; fill a series (Alt+E, I, S)
+  ;; vk1Csc079 & s::Send {ALTDOWN}e{ALTUP}is  ; fill a series (Alt+E, I, S)
+  vk1Csc079 & c::Send {ALTDOWN}h{ALTUP}sc  ; clear filter  (Alt+H, S, C)
 #IfWinActive
