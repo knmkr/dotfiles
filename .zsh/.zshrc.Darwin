@@ -6,7 +6,8 @@ alias ls="ls -G -w"
 # export PATH=/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH
 
 # Homebrew
-BREW_HOME=$(brew --prefix)
+# FIXME: Suppose homebrew is installed at ~/homebrew or ~/local/brew
+test -d ~/homebrew && BREW_HOME=~/homebrew || BREW_HOME=~/local/brew
 if [ -d ${BREW_HOME} ]; then
     export PATH=${BREW_HOME}/bin:${BREW_HOME}/sbin:$PATH
 fi
