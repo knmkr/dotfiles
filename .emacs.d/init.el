@@ -36,6 +36,7 @@
       ruby-electric
       ruby-block
       session
+      csv-mode
       ;; minibuf-isearch
       ;; migemo
       ))
