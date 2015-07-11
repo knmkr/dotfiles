@@ -36,6 +36,8 @@
   (ruby-indent-line t)
   (end-of-line))
 
+;; Magic comment (`# coding: utf-8`) を入れない
+(setq ruby-insert-encoding-magic-comment nil)
 
 ;;
 ;; (require 'rcodetools nil t)
