@@ -37,6 +37,7 @@
       ruby-block
       session
       csv-mode
+      ess
       ;; minibuf-isearch
       ;; migemo
       ))
