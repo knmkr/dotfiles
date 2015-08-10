@@ -17,7 +17,7 @@
   (package-initialize)
 
   ;; [FIXME] To load packages, uncomment out below line
-  ;; (package-refresh-contents)
+  (package-refresh-contents)
 
   ;; Install packages
   (defvar my/favorite-packages
@@ -36,7 +36,6 @@
       ruby-electric
       ruby-block
       session
-      csv-mode
       ess
       ;; minibuf-isearch
       ;; migemo
