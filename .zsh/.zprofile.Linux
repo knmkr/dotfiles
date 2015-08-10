@@ -1,0 +1,5 @@
+# Keymaps and pointer button mappings
+xmodmap ~/.xmodmap
+
+# Keyrepeat
+xset r rate 200 40
