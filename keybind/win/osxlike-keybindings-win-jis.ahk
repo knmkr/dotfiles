@@ -106,16 +106,17 @@ SetTitleMatchMode 2  ; a window's title can contain WinTitle anywhere inside it 
   vk1Dsc07B & v::Send +{Ins}
 
   ; Henkan to meta-key for zsh/emacs/...
-  vk1Csc079 & i::Send {ALTDOWN}i{ALTUP}          ; M-i
-  vk1Csc079 & /::Send {ALTDOWN}/{ALTUP}          ; M-/
-  vk1Csc079 & b::Send {ALTDOWN}b{ALTUP}          ; M-b
-  vk1Csc079 & SC027::Send {ALTDOWN}SC027{ALTUP}  ; M-
+  vk1Csc079 & i::Send {ALTDOWN}i{ALTUP}          ; M-i (cdup)
+  vk1Csc079 & /::Send {ALTDOWN}/{ALTUP}          ; M-/ (zaw-cdr)
+  vk1Csc079 & SC027::Send {ALTDOWN}`;{ALTUP}     ; M-; (zaw-gitdir)
+  vk1Csc079 & b::Send {ALTDOWN}b{ALTUP}          ; M-b (zaw-git-branches)
   vk1Csc079 & x::Send {ALTDOWN}x{ALTUP}          ; M-x
   vk1Csc079 & r::Send {ALTDOWN}r{ALTUP}          ; M-r
   vk1Csc079 & w::Send {ALTDOWN}w{ALTUP}          ; M-w
   vk1Csc079 & u::Send {ALTDOWN}u{ALTUP}          ; M-u
   vk1Csc079 & l::Send {ALTDOWN}l{ALTUP}          ; M-l
   vk1Csc079 & c::Send {ALTDOWN}c{ALTUP}          ; M-c
+
 #IfWinActive
 
 ;; Chrome
