@@ -1,4 +1,4 @@
-EMACS=emacs-24.3
+EMACS=emacs-24.5
 
 usage:
 	@echo "USAGE: make [*.el | *.elc]"
@@ -40,7 +40,6 @@ usage:
 # 	curl -O http://0xcc.net/migemo/migemo-0.40.tar.gz
 # 	gzip -dc migemo-0.40.tar.gz | tar xvf -
 # 	# cd migemo-0.40; ./configure && make && make install
-
 
 elisp.d:
 	mkdir elisp.d
