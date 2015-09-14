@@ -5,6 +5,7 @@ WheelDown::Send {WheelUp}
 
 vkF2sc070::Return  ; Disable Katakana-Hiragana
 sc029::Return      ; Disable Zenkaku-Hankaku
+Insert::Return     ; Disable Ins
 
 ;; OSX-like key bindings
 
