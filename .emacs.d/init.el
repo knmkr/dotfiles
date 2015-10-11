@@ -37,6 +37,7 @@
       ruby-block
       session
       ess
+      go-mode
       ;; minibuf-isearch
       ;; migemo
       ))
