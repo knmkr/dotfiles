@@ -4,8 +4,8 @@
 # Git contrib/diff-highlight
 # export PATH=${DOTFILES_PATH}/VCS/git/contrib/diff-highlight:$PATH
 
-# Java
-# export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home
+# Java (on OSX)
+# export JAVA_HOME=$(/System/Library/Frameworks/JavaVM.framework/Versions/A/Commands/java_home -v "1.8")
 # export DERBY_HOME=$JAVA_HOME/db
 
 # R
