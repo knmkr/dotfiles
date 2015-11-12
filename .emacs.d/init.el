@@ -38,6 +38,7 @@
       session
       ess
       go-mode
+      editorconfig
       ;; minibuf-isearch
       ;; migemo
       ))
@@ -356,3 +357,8 @@
 ;;   ;; TABで任意補完。選択肢が出てきたらC-nやC-pで上下移動してから決定することも可能
 ;;   (define-key helm-c-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
 ;;   )
+
+
+;; editorconfig
+(load "editorconfig")
+(editorconfig-mode 1)
