@@ -32,7 +32,7 @@
       ac-python
       scala-mode
       org
-      flymake-cursor
+      ;; flymake-cursor
       ruby-electric
       ruby-block
       session

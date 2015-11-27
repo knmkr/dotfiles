@@ -67,19 +67,26 @@
 ;;    true
 ;; 3. $ chmod 755 ~/.emacs.d/elisp/flymake/pychecker
 ;;
+;;
 ;; http://d.hatena.ne.jp/cou929_la/20110525/1306321857
-;; (add-hook 'find-file-hook 'flymake-find-file-hook)
-;; (when (load "flymake" t)
-;;   (defun flymake-pyflakes-init ()
-;;     (let* ((temp-file (flymake-init-create-temp-buffer-copy
-;;                        'flymake-create-temp-inplace))
-;;            (local-file (file-relative-name
-;;                         temp-file
-;;                         (file-name-directory buffer-file-name))))
-;;       (list "pychecker"  (list local-file))))  ;~/.emacs.d/elisp/flymake/pychecker
-;;   (add-to-list 'flymake-allowed-file-name-masks
-;;                '("\\.py\\'" flymake-pyflakes-init)))
-;; (load-library "flymake-cursor")
+;; http://yukke.hateblo.jp/entry/2015/01/09/222311
+(add-hook 'find-file-hook 'flymake-find-file-hook)
+(when (load "flymake" t)
+  (defun flymake-pyflakes-init ()
+    (let* ((temp-file (flymake-init-create-temp-buffer-copy
+                       'flymake-create-temp-inplace))
+           (local-file (file-relative-name
+                        temp-file
+                        (file-name-directory buffer-file-name))))
+      (list "pychecker" (list local-file))))  ; ~/.emacs.d/elisp/flymake/pychecker
+  (add-to-list 'flymake-allowed-file-name-masks
+               '("\\.py\\'" flymake-pyflakes-init)))
+
+(defun flymake-show-help ()
+  (when (get-char-property (point) 'flymake-overlay)
+    (let ((help (get-char-property (point) 'help-echo)))
+      (if help (message "%s" help)))))
+(add-hook 'post-command-hook 'flymake-show-help)
 ;; (global-set-key [f10] 'flymake-goto-prev-error)
 ;; (global-set-key [f11] 'flymake-goto-next-error)
 
