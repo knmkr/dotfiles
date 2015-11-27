@@ -8,6 +8,7 @@
 .emacs.d/elpa/*/
 .emacs.d/elpa/*readme.txt
 .emacs.d/.session
+.python-environments
 
 *.elc
 

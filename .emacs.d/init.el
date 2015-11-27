@@ -41,6 +41,7 @@
       editorconfig
       ;; minibuf-isearch
       ;; migemo
+      jedi
       ))
 
   (dolist (package my/favorite-packages)
