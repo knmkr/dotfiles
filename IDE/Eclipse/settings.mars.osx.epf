@@ -1,0 +1,17 @@
+#Sat Nov 28 17:00:45 JST 2015
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.8
+@org.eclipse.ui=3.107.0.v20150507-1945
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.enumIdentifier=error
+@org.eclipse.ui.workbench=3.107.0.v20150825-2206
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.source=1.8
+@org.eclipse.jdt.core=3.11.1.v20150902-1521
+/instance/org.eclipse.ui/KEY_CONFIGURATION_ID=org.eclipse.ui.emacsAcceleratorConfiguration
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.problem.assertIdentifier=error
+/instance/org.eclipse.jdt.core/org.eclipse.jdt.core.compiler.compliance=1.8
+\!/=
+file_export_version=3.0
+/instance/org.eclipse.jdt.ui/org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+/instance/org.eclipse.ui.workbench/org.eclipse.ui.commands=<?xml version\="1.0" encoding\="UTF-8"?>\n<org.eclipse.ui.commands>\n<activeKeyConfiguration keyConfigurationId\="org.eclipse.ui.emacsAcceleratorConfiguration"/>\n<keyBinding contextId\="org.eclipse.ui.contexts.window" keyConfigurationId\="org.eclipse.ui.emacsAcceleratorConfiguration" keySequence\="F10"/>\n<keyBinding contextId\="org.eclipse.ui.contexts.window" keyConfigurationId\="org.eclipse.ui.emacsAcceleratorConfiguration" keySequence\="F9"/>\n<keyBinding commandId\="org.eclipse.ui.edit.redo" contextId\="org.eclipse.ui.textEditorScope" keyConfigurationId\="org.eclipse.ui.emacsAcceleratorConfiguration" keySequence\="CTRL+G CTRL+/"/>\n<keyBinding commandId\="org.eclipse.ui.edit.text.contentAssist.proposals" contextId\="org.eclipse.ui.contexts.dialogAndWindow" keyConfigurationId\="org.eclipse.ui.emacsAcceleratorConfiguration" keySequence\="CTRL+TAB"/>\n<keyBinding commandId\="org.eclipse.ui.edit.text.deletePrevious" contextId\="org.eclipse.ui.textEditorScope" keyConfigurationId\="org.eclipse.ui.emacsAcceleratorConfiguration" keySequence\="CTRL+H"/>\n<keyBinding commandId\="org.eclipse.ui.edit.undo" contextId\="org.eclipse.ui.textEditorScope" keyConfigurationId\="org.eclipse.ui.emacsAcceleratorConfiguration" keySequence\="CTRL+/"/>\n<keyBinding commandId\="org.eclipse.ui.edit.undo" contextId\="org.eclipse.ui.textEditorScope" keyConfigurationId\="org.eclipse.ui.emacsAcceleratorConfiguration" keySequence\="CTRL+_"/>\n<keyBinding contextId\="org.eclipse.ui.contexts.dialogAndWindow" keyConfigurationId\="org.eclipse.ui.defaultAcceleratorConfiguration" keySequence\="CTRL+SPACE"/>\n<keyBinding contextId\="org.eclipse.ui.textEditorScope" keyConfigurationId\="org.eclipse.ui.emacsAcceleratorConfiguration" keySequence\="CTRL+SPACE"/>\n<keyBinding commandId\="org.eclipse.ui.cocoa.minimizeWindow" contextId\="org.eclipse.jdt.ui.javaEditorScope" keyConfigurationId\="org.eclipse.ui.emacsAcceleratorConfiguration" keySequence\="COMMAND+M"/>\n</org.eclipse.ui.commands>
+@org.eclipse.jdt.ui=3.11.1.v20150827-1306
+/instance/org.eclipse.jdt.ui/org.eclipse.jdt.ui.formatterprofiles.version=12
