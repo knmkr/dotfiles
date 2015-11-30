@@ -14,20 +14,6 @@
 ;; python auto-complete
 ;; (when (require 'ac-python nil t))
 
-;; NOTE: somehow Jedi causes kernel panic when terminating emacs...
-;; Jedi.el - Python auto-completion for Emacs
-;; (add-to-list 'load-path "~/.emacs.d/elisp/emacs-jedi")
-;; (when (require 'jedi nil t)
-;;   (add-hook 'python-mode-hook 'jedi:setup)
-;;   (setq jedi:complete-on-dot t)
-
-;;   (defun jedi:stop-all-servers ()
-;;     (maphash (lambda (_ mngr) (epc:stop-epc mngr))
-;;              jedi:server-pool--table))
-;;   (add-hook 'kill-emacs-hook #'jedi:stop-all-servers)
-;;   )
-;; (autoload 'jedi:setup "jedi" nil t)
-
 
 ;; Colors
 (font-lock-add-keywords 'python-mode '(
@@ -58,6 +44,8 @@
 
 ;; Flymake
 ;;
+;; Install
+;;
 ;; 1. $ pip install pyflakes pep8
 ;; 2. $ cat ~/.emacs.d/elisp/flymake/pychecker
 ;;    #!/bin/bash
@@ -68,31 +56,39 @@
 ;; 3. $ chmod 755 ~/.emacs.d/elisp/flymake/pychecker
 ;;
 ;; http://d.hatena.ne.jp/cou929_la/20110525/1306321857
-;; (add-hook 'find-file-hook 'flymake-find-file-hook)
-;; (when (load "flymake" t)
-;;   (defun flymake-pyflakes-init ()
-;;     (let* ((temp-file (flymake-init-create-temp-buffer-copy
-;;                        'flymake-create-temp-inplace))
-;;            (local-file (file-relative-name
-;;                         temp-file
-;;                         (file-name-directory buffer-file-name))))
-;;       (list "pychecker"  (list local-file))))  ;~/.emacs.d/elisp/flymake/pychecker
-;;   (add-to-list 'flymake-allowed-file-name-masks
-;;                '("\\.py\\'" flymake-pyflakes-init)))
-;; (load-library "flymake-cursor")
-;; (global-set-key [f10] 'flymake-goto-prev-error)
-;; (global-set-key [f11] 'flymake-goto-next-error)
+;; http://yukke.hateblo.jp/entry/2015/01/09/222311
+(add-hook 'find-file-hook 'flymake-find-file-hook)
+(when (load "flymake" t)
+  (defun flymake-pyflakes-init ()
+    (let* ((temp-file (flymake-init-create-temp-buffer-copy
+                       'flymake-create-temp-inplace))
+           (local-file (file-relative-name
+                        temp-file
+                        (file-name-directory buffer-file-name))))
+      (list "pychecker" (list local-file))))  ; ~/.emacs.d/elisp/flymake/pychecker
+  (add-to-list 'flymake-allowed-file-name-masks
+               '("\\.py\\'" flymake-pyflakes-init)))
+
+(defun flymake-show-help ()
+  (when (get-char-property (point) 'flymake-overlay)
+    (let ((help (get-char-property (point) 'help-echo)))
+      (if help (message "%s" help)))))
+(add-hook 'post-command-hook 'flymake-show-help)
+(global-set-key [f10] 'flymake-goto-prev-error)
+(global-set-key [f11] 'flymake-goto-next-error)
 
 
-;; FIXME: jedi causes crush
-;; ;; jedi
-;; (add-to-list 'load-path "~/.emacs.d/elisp/jedi/emacs-deferred")
-;; (add-to-list 'load-path "~/.emacs.d/elisp/jedi/emacs-epc")
-;; (add-to-list 'load-path "~/.emacs.d/elisp/jedi/emacs-ctable")
-;; (add-to-list 'load-path "~/.emacs.d/elisp/jedi/emacs-jedi")
-;; (require 'auto-complete-config)
-;; (require 'python)
-;; (require 'jedi)
-;; (add-hook 'python-mode-hook 'jedi:setup)
-;; ;; (define-key python-mode-map (kbd "<C-tab>") 'jedi:complete)
-;; (setq jedi:complete-on-dot t)
+;; Jedi.el - Python auto-completion for Emacs
+;;
+;; Install
+;;
+;; 1. Run `M-x jedi:install-server`
+;;
+;; http://qiita.com/yuizho/items/4c121bdecc103109e4fd
+(when (require 'jedi nil t)
+  (add-hook 'python-mode-hook 'jedi:setup)
+  (setq jedi:complete-on-dot t)
+
+  ;; (define-key python-mode-map (kbd "<C-tab>") 'jedi:complete)
+  ;; (setq jedi:complete-on-dot t)
+)
