@@ -346,7 +346,13 @@ zle -N do_enter
 bindkey '^m' do_enter
 bindkey '^j' do_enter
 
-
+# zsh-syntax-highlighting
+#
+# Fish shell-like like syntax highlighting for Zsh.
+# git://github.com/zsh-users/zsh-syntax-highlighting.git
+if [ -f $ZDOTDIR/zaw/zaw.zsh ]; then
+    source  $ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
 # Load local settings
 [ -f ~/.zshrc.mine ] && . ~/.zshrc.mine
