@@ -109,8 +109,8 @@ alias nkf='nkf -w'
 
 # History
 HISTFILE=~/.zhistory
-HISTSIZE=100000
-SAVEHIST=100000
+HISTSIZE=1000000
+SAVEHIST=1000000
 setopt hist_ignore_dups
 setopt share_history
 
