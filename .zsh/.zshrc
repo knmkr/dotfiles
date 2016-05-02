@@ -146,27 +146,6 @@ watch="all"                    # 全てのユーザのログイン・ログア�
 log                            # ログイン時にはすぐに表示する
 
 
-# Software
-# ruby, rbenv
-if [ -d ${HOME}/.rbenv ]; then
-    export PATH="$HOME/.rbenv/bin:$PATH"
-    eval "$(rbenv init -)"
-    . ~/.rbenv/completions/rbenv.zsh
-
-    #
-    export PATH=~/.rbenv/shims:$PATH
-fi
-
-# svn
-svn() {
-    if [ "$1" = "log" ]
-    then
-        command svn "$@" | less -FX
-    else
-        command svn "$@"
-    fi
-}
-
 # bundler
 alias be='bundle exec'
 
@@ -256,6 +235,35 @@ case $OSTYPE in
         . $ZDOTDIR/.zshrc.Cygwin
         ;;
 esac
+
+
+# Software
+# ruby, rbenv
+if [ -d ${HOME}/.rbenv ]; then
+    if [ -d ${HOME}/.rbenv/bin ]; then
+        RBENV_HOME="${HOME}/.rbenv"
+    elif [ -d ${BREW_HOME}/Cellar/rbenv ]; then
+        RBENV_VERSION=$(rbenv --version| cut -d' ' -f2)
+        RBENV_HOME="${BREW_HOME}/Cellar/rbenv/${RBENV_VERSION}"
+    fi
+
+    export PATH="${RBENV_HOME}/bin:$PATH"
+
+    eval "$(rbenv init -)"
+    . ${RBENV_HOME}/completions/rbenv.zsh
+
+    export PATH="${RBENV_HOME}/shims:$PATH"
+fi
+
+# svn
+svn() {
+    if [ "$1" = "log" ]
+    then
+        command svn "$@" | less -FX
+    else
+        command svn "$@"
+    fi
+}
 
 
 # `cd`
