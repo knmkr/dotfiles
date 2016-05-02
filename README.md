@@ -1,10 +1,7 @@
 # dotfiles
 
-- Current target platforms
-  - OSX, iTerm2
-  - Windows7, Cygwin/mintty
-  - CentOS/Fedora
+## Target platforms
 
-- Required software for keybindings
-  - OSX: [Karabiner](https://pqrs.org/osx/karabiner/index.html.en)
-  - Windows: [AutoHotkey](http://www.autohotkey.com)
+- OSX + [iTerm2](https://www.iterm2.com) + [Karabiner](https://pqrs.org/osx/karabiner/index.html.en)
+- Windows7 + [Cygwin](https://www.cygwin.com) + [AutoHotkey](http://www.autohotkey.com)
+- CentOS/Fedora
