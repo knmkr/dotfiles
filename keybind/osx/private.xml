@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>[Excel] Option+Left/Right to Command+{/} (Move to the previous/next sheet in the workbook)</name>
+    <identifier>private.app_excel_next_sheet</identifier>
+    <only>EXCEL</only>
+    <autogen>__KeyToKey__ KeyCode::BRACKET_LEFT,  ModifierFlag::SHIFT_L, ModifierFlag::COMMAND_L, KeyCode::CURSOR_LEFT,  ModifierFlag::OPTION_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::BRACKET_RIGHT, ModifierFlag::SHIFT_L, ModifierFlag::COMMAND_L, KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L</autogen>
+  </item>
+</root>
