@@ -1,0 +1,8 @@
+[core]
+	preloadindex = true
+	fscache = true
+	symlinks = false
+	autocrlf = false
+[gc]
+	auto = 256
+
