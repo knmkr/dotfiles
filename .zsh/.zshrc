@@ -144,7 +144,7 @@ unlimit
 limit -s
 watch="all"                    # 全てのユーザのログイン・ログアウトを監視
 log                            # ログイン時にはすぐに表示する
-
+setopt interactivecomments     # コマンドライン実行時もコメントを使えるようにする
 
 # bundler
 alias be='bundle exec'
