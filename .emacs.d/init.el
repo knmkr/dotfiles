@@ -42,6 +42,7 @@
       ;; minibuf-isearch
       ;; migemo
       jedi
+      go-autocomplete
       ))
 
   (dolist (package my/favorite-packages)
@@ -288,6 +289,7 @@
 ;;;;;;;;;;;;;;;;;;;
 ;;; Minor Modes ;;;
 (load "init-python")
+(load "init-go")
 (load "init-cpp")
 (load "init-makefile")
 (load "init-ruby")
