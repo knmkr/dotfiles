@@ -1,7 +1,11 @@
 - キーボード > ショートカット
-  - Mission Control ^↑をoff
-  - アプリケーションウィンドウ ^↓をoff
-  - Spotlight 検索フィールドを表示 ctrl+shift+space に変更
+  - Mission Control > Mission Control: ^↑をoff
+  - Mission Control > アプリケーションウィンドウ: ^↓をoff
+  - キーボード > 次のウィンドウを操作対象にする: cmd+`
+  - Spotlight > Spotlight 検索フィールドを表示: ctrl+shift+space に変更
+  - フルキーボードアクセス: すべてコントロール
 - キーボード > 修飾キー
   - Control キー を Caps Lock に変更
   - Caps Lock キー を Control に変更
+- アクセシビリティ > マウス/トラックパッド
+  - トラックパッドオプション > ドラッグを有効にする: 3本指のドラッグ
