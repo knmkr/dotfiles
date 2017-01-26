@@ -43,6 +43,7 @@
       ;; migemo
       jedi
       go-autocomplete
+      web-mode
       ))
 
   (dolist (package my/favorite-packages)
@@ -297,10 +298,11 @@
 (load "init-scala")
 (load "init-elisp")
 (load "init-shell")
-(load "init-css")
+;; (load "init-css")
 (load "init-yaml")
 (load "init-tex")
 (load "init-orgmode")
+(load "init-web")
 
 
 ;; added by function `customize-face`
@@ -330,13 +332,18 @@
  '(rst-level-2 ((t (:background "grey10"))))
  '(secondary-selection ((t (:background "yellow4"))))
  '(trailing-whitespace ((t (:background "red4"))))
+ '(web-mode-html-attr-name-face ((t (:foreground "hot pink"))))
+ '(web-mode-html-tag-bracket-face ((t (:foreground "unspecified-fg"))))
  '(widget-field ((t (:background "yellow4")))))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(package-selected-packages
+   (quote
+    (go-autocomplete jedi editorconfig go-mode ess session ruby-block ruby-electric scala-mode ac-python auto-install yaml-mode rainbow-mode auto-complete hl-line+)))
+ '(session-use-package t nil (session)))
 
 
 ;; Rainbow-mode
