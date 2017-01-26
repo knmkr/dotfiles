@@ -352,6 +352,7 @@
 (add-hook 'scss-mode-hook 'rainbow-mode)
 (add-hook 'php-mode-hook 'rainbow-mode)
 (add-hook 'html-mode-hook 'rainbow-mode)
+(add-hook 'web-mode-hook 'rainbow-mode)
 
 ;; ;; migemo
 ;; ローマ字のまま日本語をインクリメンタル検索 `$ brew install cmigemo`
