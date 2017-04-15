@@ -74,3 +74,9 @@ function battery() {
 function mail_unread() {
     echo `osascript -e 'tell application "Mail" to unread count of inbox'`
 }
+
+function git-cleanup-local-branches() {
+    git remote prune origin
+    git branch -d $(git branch --merged)
+    git branch -vv
+}
