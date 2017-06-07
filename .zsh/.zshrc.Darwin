@@ -12,6 +12,9 @@ if [ -d ${BREW_HOME} ]; then
     export PATH=${BREW_HOME}/bin:${BREW_HOME}/sbin:$PATH
 fi
 
+# iTerm2
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
 # source-highlight (Homebrew)  $ brew install source-highlight
 export LESSOPEN="| ${BREW_HOME}/bin/src-hilite-lesspipe.sh %s"
 
