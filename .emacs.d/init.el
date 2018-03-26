@@ -44,6 +44,7 @@
       jedi
       go-autocomplete
       web-mode
+      rjsx-mode
       php-mode
       ))
 
