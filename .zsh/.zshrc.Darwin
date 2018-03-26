@@ -37,6 +37,11 @@ fi
 alias javac="javac -J-Dfile.encoding=UTF-8"
 alias java="java -Dfile.encoding=UTF-8"
 
+# Go
+export GOPATH=~/go
+export GOBIN=$GOPATH/bin
+
+
 # ag - The Silver Searcher
 alias ag='ag -S --pager="less -R -F"'
 
