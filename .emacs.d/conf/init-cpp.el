@@ -16,5 +16,5 @@
              (define-key c-mode-base-map "[" 'electric-pair)
              (define-key c-mode-base-map "{" 'electric-pair)
 
-             (flymake-mode t)
+             ;; (flymake-mode t)
              ))
