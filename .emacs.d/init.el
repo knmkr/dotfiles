@@ -44,6 +44,7 @@
       jedi
       go-autocomplete
       web-mode
+      php-mode
       ))
 
   (dolist (package my/favorite-packages)
@@ -295,6 +296,7 @@
 (load "init-makefile")
 (load "init-ruby")
 (load "init-js")
+(load "init-php")
 (load "init-scala")
 (load "init-elisp")
 (load "init-shell")
@@ -342,7 +344,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (go-autocomplete jedi editorconfig go-mode ess session ruby-block ruby-electric scala-mode ac-python auto-install yaml-mode rainbow-mode auto-complete hl-line+)))
+    (php-mode go-autocomplete jedi editorconfig go-mode ess session ruby-block ruby-electric scala-mode ac-python auto-install yaml-mode rainbow-mode auto-complete hl-line+)))
  '(session-use-package t nil (session)))
 
 
