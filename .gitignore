@@ -9,6 +9,7 @@
 .emacs.d/elpa/*readme.txt
 .emacs.d/.session
 .emacs.d/recentf
+.emacs.d/abbrev_defs
 .python-environments
 
 *.elc
