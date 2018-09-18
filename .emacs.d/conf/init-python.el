@@ -98,3 +98,16 @@
       )
     )
 )
+
+
+;; google/yapf -- A formatter for Python files
+;;
+;; Install
+;;
+;; 1. $ pip install yapf
+;;
+;; https://github.com/paetzke/py-yapf.el
+;;
+(when (require 'py-yapf nil t)
+  (add-hook 'python-mode-hook 'py-yapf-enable-on-save)
+  )

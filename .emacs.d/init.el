@@ -44,6 +44,7 @@
       jedi
       virtualenvwrapper
       auto-virtualenvwrapper
+      py-yapf
       go-autocomplete
       web-mode
       rjsx-mode
