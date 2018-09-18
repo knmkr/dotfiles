@@ -89,6 +89,12 @@
   (add-hook 'python-mode-hook 'jedi:setup)
   (setq jedi:complete-on-dot t)
 
-  ;; (define-key python-mode-map (kbd "<C-tab>") 'jedi:complete)
-  ;; (setq jedi:complete-on-dot t)
+  (define-key python-mode-map "M-m" 'jedi:goto-definition)
+  (define-key python-mode-map "M-i" 'jedi:goto-definition-pop-marker)
+
+  (when (require 'virtualenvwrapper)
+    (when (require 'auto-virtualenvwrapper)
+      (add-hook 'python-mode-hook #'auto-virtualenvwrapper-activate)
+      )
+    )
 )

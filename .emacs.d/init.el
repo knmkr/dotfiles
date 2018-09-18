@@ -42,6 +42,8 @@
       ;; minibuf-isearch
       ;; migemo
       jedi
+      virtualenvwrapper
+      auto-virtualenvwrapper
       go-autocomplete
       web-mode
       rjsx-mode
