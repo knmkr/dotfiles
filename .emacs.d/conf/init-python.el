@@ -85,18 +85,19 @@
 ;; 1. Run `M-x jedi:install-server`
 ;;
 ;; http://qiita.com/yuizho/items/4c121bdecc103109e4fd
+;;
 (when (require 'jedi nil t)
   (add-hook 'python-mode-hook 'jedi:setup)
   (setq jedi:complete-on-dot t)
-
-  (define-key python-mode-map "M-m" 'jedi:goto-definition)
-  (define-key python-mode-map "M-i" 'jedi:goto-definition-pop-marker)
 
   (when (require 'virtualenvwrapper)
     (when (require 'auto-virtualenvwrapper)
       (add-hook 'python-mode-hook #'auto-virtualenvwrapper-activate)
       )
     )
+
+  (define-key python-mode-map "M-m" 'jedi:goto-definition)
+  (define-key python-mode-map "M-i" 'jedi:goto-definition-pop-marker)
 )
 
 
