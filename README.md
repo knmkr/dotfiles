@@ -8,6 +8,12 @@
 
 ## Setup
 
+```
+$ git clone git@github.com:knmkr/dotfiles.git
+$ cd dotfiles
+$ git submodule update -i
+```
+
 `$ ln -s`
 
 ```
