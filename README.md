@@ -1,8 +1,8 @@
 # dotfiles
 
-## Target platforms
+## Platforms
 
-- macOS + [iTerm2](https://www.iterm2.com) + Karabiner-Elements
+- macOS + [iTerm2](https://www.iterm2.com) + [Karabiner-Elements](https://pqrs.org/osx/karabiner/)
 - [DEPRECATED] Windows7 + [Cygwin](https://www.cygwin.com) + [AutoHotkey](http://www.autohotkey.com)
 - [DEPRECATED] CentOS/Fedora
 
@@ -12,22 +12,12 @@
 $ git clone git@github.com:knmkr/dotfiles.git
 $ cd dotfiles
 $ git submodule update -i
-```
 
-`$ ln -s`
+$ DOTFILES_DIR=${PWD}
 
-```
-.zsh
-.zshenv
-.emacs.d
-.gitconfig
-.psqlrc
-.tmux.conf
-```
+$ ln -s ${DOTFILES_DIR}/{.zsh,.zshenv,.emacs.d,.gitconfig,.psqlrc,.tmux.conf} ${HOME}
 
-`$ ${EDITOR}`
+$ cp ${DOTFILES_DIR}/VCS/git/.gitconfig.local.example ${HOME}/.gitconfig.local
 
-```
-.gitconfig.local
-.pgpass
+$ mkdir -p .config/karabiner/ && ln -s ${DOTFILES_DIR}/keybind/osx/karabiner.json ${HOME}/.config/karabiner/
 ```
