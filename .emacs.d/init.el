@@ -22,13 +22,13 @@
   ;; Install packages
   (defvar my/favorite-packages
     '(
-      hl-line+
+      ;; hl-line+
       auto-complete
       popup
       rainbow-mode
       yaml-mode
       css-mode
-      auto-install
+      ;; auto-install
       ac-python
       scala-mode
       org
@@ -125,18 +125,18 @@
 ;; (display-battery-mode t)  ; Battery
 ;; (global-linum-mode t)  ; Always show line numbers (vim-like)
 
-(defun count-lines-and-chars ()
-  "
-  選択範囲の行数と文字数を表示
-  http://d.hatena.ne.jp/sonota88/20110224/1298557375
-  "
-  (if mark-active
-      (format "%d lines,%d chars "
-              (count-lines (region-beginning) (region-end))
-              (- (region-end) (region-beginning)))
-    ""))
-(add-to-list 'default-mode-line-format
-             '(:eval (count-lines-and-chars)))
+;; (defun count-lines-and-chars ()
+;;   "
+;;   選択範囲の行数と文字数を表示
+;;   http://d.hatena.ne.jp/sonota88/20110224/1298557375
+;;   "
+;;   (if mark-active
+;;       (format "%d lines,%d chars "
+;;               (count-lines (region-beginning) (region-end))
+;;               (- (region-end) (region-beginning)))
+;;     ""))
+;; (add-to-list 'default-mode-line-format
+;;              '(:eval (count-lines-and-chars)))
 
 
 ;;;;;;;;;;;;;;;
