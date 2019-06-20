@@ -24,6 +24,7 @@ export PATH=${BREW_HOME}/share/git-core/contrib/diff-highlight:$PATH
 # Python (Homebrew)
 if [ -f ${BREW_HOME}/bin/virtualenvwrapper.sh ]; then
     export WORKON_HOME=${HOME}/.virtualenvs
+    export VIRTUALENVWRAPPER_PYTHON=${BREW_HOME}/bin/python3
     source ${BREW_HOME}/bin/virtualenvwrapper.sh
 fi
 # export PYTHONPATH=${BREW_HOME}/lib/python2.7/site-packages:$PYTHONPATH
