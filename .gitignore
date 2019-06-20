@@ -1,3 +1,8 @@
+*~
+\#*
+.\#*
+
+
 # Emacs
 .emacs.d/auto-save-list/.saves-*
 .emacs.d/ac-comphist*.dat
