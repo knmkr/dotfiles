@@ -1,15 +1,15 @@
 [user]
-	name = knmkr
-	email = me@knmkr.info
+	name = Kensuke Numakura
+	email = knmkr3gma@gmail.com
 
-[github]
-	user = knmkr
-	token = tokentokentoken
+# [github]
+# 	user = knmkr
+# 	token = tokentokentoken
 
 # If your network blocks the git protocols,
 # set the following to use `https:` instead of `git:`.
 #
 # cf: https://github.com/ekg/freebayes/issues/63#
 #
-[url "https://github.com/"]
-	insteadOf = git://github.com/
+# [url "https://github.com/"]
+# 	insteadOf = git://github.com/
