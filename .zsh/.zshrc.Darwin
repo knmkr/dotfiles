@@ -1,10 +1,6 @@
 # ls
 alias ls="ls -G -w"
 
-# MacPorts
-# export PATH=/opt/local/lib:/opt/local/bin:/opt/local/sbin:$PATH
-# export PATH=/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH
-
 # Homebrew
 # FIXME: Suppose homebrew is installed at ~/homebrew or ~/local/brew
 test -d ~/homebrew && BREW_HOME=~/homebrew || BREW_HOME=~/local/brew
@@ -18,16 +14,15 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # source-highlight (Homebrew)  $ brew install source-highlight
 export LESSOPEN="| ${BREW_HOME}/bin/src-hilite-lesspipe.sh %s"
 
-# Git (Homebrew)
+# Git
 export PATH=${BREW_HOME}/share/git-core/contrib/diff-highlight:$PATH
 
-# Python (Homebrew)
+# Python
 if [ -f ${BREW_HOME}/bin/virtualenvwrapper.sh ]; then
     export WORKON_HOME=${HOME}/.virtualenvs
     export VIRTUALENVWRAPPER_PYTHON=${BREW_HOME}/bin/python3
     source ${BREW_HOME}/bin/virtualenvwrapper.sh
 fi
-# export PYTHONPATH=${BREW_HOME}/lib/python2.7/site-packages:$PYTHONPATH
 export PYTHONSTARTUP=~/.pythonstartup
 
 
@@ -78,10 +73,6 @@ function backup-cloud-dir() {
 
 function battery() {
     pmset -g batt| perl -ne 'print "$&\n" if /\d+%/'
-}
-
-function mail_unread() {
-    echo `osascript -e 'tell application "Mail" to unread count of inbox'`
 }
 
 function git-cleanup-local-branches() {
