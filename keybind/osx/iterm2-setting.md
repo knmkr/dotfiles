@@ -1,4 +1,0 @@
-- Preferences > Profiles > Keys > Left option key acts as:
-  - +Esc
-- Preferences > Keys > Right command key:
-  - Left Option
