@@ -86,19 +86,19 @@
 ;;
 ;; http://qiita.com/yuizho/items/4c121bdecc103109e4fd
 ;;
-(when (require 'jedi nil t)
-  (add-hook 'python-mode-hook 'jedi:setup)
-  (setq jedi:complete-on-dot t)
+;; (when (require 'jedi nil t)
+;;   (add-hook 'python-mode-hook 'jedi:setup)
+;;   (setq jedi:complete-on-dot t)
 
-  (when (require 'virtualenvwrapper)
-    (when (require 'auto-virtualenvwrapper)
-      (add-hook 'python-mode-hook #'auto-virtualenvwrapper-activate)
-      )
-    )
+;;   (when (require 'virtualenvwrapper)
+;;     (when (require 'auto-virtualenvwrapper)
+;;       (add-hook 'python-mode-hook #'auto-virtualenvwrapper-activate)
+;;       )
+;;     )
 
-  (define-key python-mode-map "M-m" 'jedi:goto-definition)
-  (define-key python-mode-map "M-i" 'jedi:goto-definition-pop-marker)
-)
+;;   (define-key python-mode-map "M-m" 'jedi:goto-definition)
+;;   (define-key python-mode-map "M-i" 'jedi:goto-definition-pop-marker)
+;; )
 
 
 ;; google/yapf -- A formatter for Python files
@@ -109,6 +109,22 @@
 ;;
 ;; https://github.com/paetzke/py-yapf.el
 ;;
-(when (require 'py-yapf nil t)
-  (add-hook 'python-mode-hook 'py-yapf-enable-on-save)
+;; (when (require 'py-yapf nil t)
+;;   (add-hook 'python-mode-hook 'py-yapf-enable-on-save)
+;;   )
+
+
+;; isort
+(when (require 'py-isort nil t)
+  ;; (setq py-isort-options '("--skip-glob='**/migrations/*'"))
+  ;; (setq py-isort-options '("--lines=88"))
+  ;; (setq py-isort-options '("--multi-line=3"))
+  ;; (setq py-isort-options '("--force-sort-within-sections"))
+  (add-hook 'before-save-hook 'py-isort-before-save)
   )
+
+
+;; black
+;; (when (require 'blacken nil t)
+;;   (add-hook 'python-mode-hook 'blacken-mode)
+;;   )

@@ -17,18 +17,18 @@
   (package-initialize)
 
   ;; [FIXME] To load packages, uncomment out below line
-  (package-refresh-contents)
+  ;; (package-refresh-contents)
 
   ;; Install packages
   (defvar my/favorite-packages
     '(
-      hl-line+
+      ;; hl-line+
       auto-complete
       popup
       rainbow-mode
       yaml-mode
       css-mode
-      auto-install
+      ;; auto-install
       ac-python
       scala-mode
       org
@@ -49,6 +49,8 @@
       web-mode
       rjsx-mode
       php-mode
+      py-isort
+      blacken
       ))
 
   (dolist (package my/favorite-packages)
@@ -125,18 +127,19 @@
 ;; (display-battery-mode t)  ; Battery
 ;; (global-linum-mode t)  ; Always show line numbers (vim-like)
 
-(defun count-lines-and-chars ()
-  "
-  選択範囲の行数と文字数を表示
-  http://d.hatena.ne.jp/sonota88/20110224/1298557375
-  "
-  (if mark-active
-      (format "%d lines,%d chars "
-              (count-lines (region-beginning) (region-end))
-              (- (region-end) (region-beginning)))
-    ""))
-(add-to-list 'default-mode-line-format
-             '(:eval (count-lines-and-chars)))
+;; (defun count-lines-and-chars ()
+;;   "
+;;   選択範囲の行数と文字数を表示
+;;   http://d.hatena.ne.jp/sonota88/20110224/1298557375
+;;   "
+;;   (if mark-active
+;;       (format "%d lines,%d chars "
+;;               (count-lines (region-beginning) (region-end))
+;;               (- (region-end) (region-beginning)))
+;;     ""))
+
+;; (add-to-list 'default-mode-line-format
+;;              '(:eval (count-lines-and-chars)))
 
 
 ;;;;;;;;;;;;;;;
@@ -318,8 +321,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-invalid ((t (:background "red" :foreground "yellow1"))))
- '(flymake-errline ((t (:background "color-52"))))
- '(flymake-warnline ((t (:background "color-19"))))
+ '(flymake-error ((t (:background "color-52"))))
+ '(flymake-warning ((t (:background "color-19"))))
  '(fringe ((t (:background "black"))))
  '(highlight ((t (:background "darkseagreen4"))))
  '(isearch ((t (:background "color-200" :foreground "brightblue"))))
@@ -351,7 +354,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (php-mode go-autocomplete jedi editorconfig go-mode ess session ruby-block ruby-electric scala-mode ac-python auto-install yaml-mode rainbow-mode auto-complete hl-line+)))
+    (blacken py-isort php-mode go-autocomplete jedi editorconfig go-mode ess session ruby-block ruby-electric scala-mode ac-python auto-install yaml-mode rainbow-mode auto-complete hl-line+)))
  '(session-use-package t nil (session)))
 
 
