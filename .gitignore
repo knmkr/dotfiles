@@ -16,6 +16,7 @@
 .emacs.d/recentf
 .emacs.d/abbrev_defs
 .python-environments
+.emacs.d/network-security.data
 
 *.elc
 
