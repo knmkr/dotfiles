@@ -46,7 +46,15 @@
                                         "key_code": "left_command"
                                     }
                                 ],
-                                "type": "basic"
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_unless",
+                                        "bundle_identifiers": [
+                                            "^com\\.vmware\\.fusion$"
+                                        ]
+                                    }
+                                ]
                             },
                             {
                                 "from": {
