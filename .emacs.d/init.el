@@ -51,6 +51,7 @@
       php-mode
       py-isort
       blacken
+      helm
       helm-git-grep
       ))
 
