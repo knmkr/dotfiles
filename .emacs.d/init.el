@@ -51,6 +51,7 @@
       php-mode
       py-isort
       blacken
+      helm-git-grep
       ))
 
   (dolist (package my/favorite-packages)
@@ -354,7 +355,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (blacken py-isort php-mode go-autocomplete jedi editorconfig go-mode ess session ruby-block ruby-electric scala-mode ac-python auto-install yaml-mode rainbow-mode auto-complete hl-line+)))
+    (terraform-mode blacken py-isort php-mode go-autocomplete jedi editorconfig go-mode ess session ruby-block ruby-electric scala-mode ac-python auto-install yaml-mode rainbow-mode auto-complete hl-line+)))
  '(session-use-package t nil (session)))
 
 
@@ -385,3 +386,14 @@
 ;; editorconfig
 (load "editorconfig")
 (editorconfig-mode 1)
+
+
+;; helm-git-grep
+(when (require 'helm-git-grep nil t)
+  (global-set-key (kbd "C-x C-e") 'helm-git-grep)
+  ;; Invoke `helm-git-grep' from isearch.
+  (define-key isearch-mode-map (kbd "C-c C-e") 'helm-git-grep-from-isearch)
+  ;; Invoke `helm-git-grep' from other helm.
+  (eval-after-load 'helm
+    '(define-key helm-map (kbd "C-c C-e") 'helm-git-grep-from-helm))
+  )
