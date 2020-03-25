@@ -100,7 +100,7 @@ alias lt="ls -lht"
 alias lx="ls -lhx"
 alias du="du -h"
 alias df="df -h"
-alias su="su -l"
+# alias su="su -l"
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
