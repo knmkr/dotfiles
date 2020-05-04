@@ -96,7 +96,7 @@
 ;;; Key Bindings ;;;
 (define-key global-map (kbd "C-h") 'delete-backward-char)
 (define-key global-map (kbd "C-m") 'newline-and-indent)
-(define-key global-map (kbd "C-x C-g") 'goto-line)
+(define-key global-map (kbd "C-x C-j") 'goto-line)
 (define-key global-map (kbd "M-r") 'replace-string)
 
 ;; tmux
@@ -391,12 +391,12 @@
 
 ;; helm-git-grep
 (when (require 'helm-git-grep nil t)
-  (global-set-key (kbd "C-x C-e") 'helm-git-grep)
+  (global-set-key (kbd "C-x C-g") 'helm-git-grep)
   ;; Invoke `helm-git-grep' from isearch.
-  (define-key isearch-mode-map (kbd "C-c C-e") 'helm-git-grep-from-isearch)
+  (define-key isearch-mode-map (kbd "C-c C-g") 'helm-git-grep-from-isearch)
   ;; Invoke `helm-git-grep' from other helm.
   (eval-after-load 'helm
-    '(define-key helm-map (kbd "C-c C-e") 'helm-git-grep-from-helm))
+    '(define-key helm-map (kbd "C-c C-g") 'helm-git-grep-from-helm))
   )
 
 
