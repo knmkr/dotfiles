@@ -398,3 +398,13 @@
   (eval-after-load 'helm
     '(define-key helm-map (kbd "C-c C-e") 'helm-git-grep-from-helm))
   )
+
+
+;; flycheck
+(when (require 'flycheck nil t)
+  (add-hook 'after-init-hook #'global-flycheck-mode)
+
+  ;; won't use html-tidy
+  ;; TODO: find jinja2 checker for django templates
+  (setq-default flycheck-disabled-checkers '(html-tidy))
+  )
