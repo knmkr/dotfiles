@@ -128,3 +128,12 @@
 ;; (when (require 'blacken nil t)
 ;;   (add-hook 'python-mode-hook 'blacken-mode)
 ;;   )
+
+
+;; Elpy
+(when (require 'elpy nil t)
+  (elpy-enable)
+
+  ;; https://elpy.readthedocs.io/en/latest/customization_tips.html#jumping-to-assignment
+  (define-key map (kbd "M-.") 'elpy-goto-assignment)
+  )
