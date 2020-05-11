@@ -53,6 +53,7 @@
       blacken
       helm
       helm-git-grep
+      magit
       ))
 
   (dolist (package my/favorite-packages)
@@ -329,6 +330,21 @@
  '(highlight ((t (:background "darkseagreen4"))))
  '(isearch ((t (:background "color-200" :foreground "brightblue"))))
  '(isearch-fail ((t (:background "color-88"))))
+ '(magit-blame-heading ((t (:background "grey30" :foreground "grey10" :slant normal :weight normal))))
+ '(magit-branch-local ((t (:foreground "brightgreen"))))
+ '(magit-branch-remote ((t (:foreground "brightred"))))
+ '(magit-diff-added ((t (:foreground "green"))))
+ '(magit-diff-added-highlight ((t (:foreground "green"))))
+ '(magit-diff-context-highlight ((t (:foreground "grey50"))))
+ '(magit-diff-hunk-heading ((t (:background "grey30" :foreground "grey10"))))
+ '(magit-diff-removed ((t (:foreground "red"))))
+ '(magit-diff-removed-highlight ((t (:foreground "red"))))
+ '(magit-diff-revision-summary ((t nil)))
+ '(magit-diff-revision-summary-highlight ((t nil)))
+ '(magit-diffstat-added ((t (:foreground "green"))))
+ '(magit-diffstat-removed ((t (:foreground "red"))))
+ '(magit-hash ((t (:foreground "yellow"))))
+ '(magit-section-highlight ((t nil)))
  '(match ((t (:background "yellow4"))))
  '(org-document-info ((t (:foreground "blue"))))
  '(org-document-title ((t (:foreground "blue"))))
@@ -343,8 +359,8 @@
  '(rst-level-2 ((t (:background "grey10"))))
  '(secondary-selection ((t (:background "yellow4"))))
  '(smerge-markers ((t (:background "brightblack"))))
- '(smerge-mine ((t (:background "#4c4242"))))
- '(smerge-other ((t (:background "#424c42"))))
+ '(smerge-mine ((t (:background "#4c4242"))) t)
+ '(smerge-other ((t (:background "#424c42"))) t)
  '(trailing-whitespace ((t (:background "red4"))))
  '(web-mode-html-attr-name-face ((t (:foreground "hot pink"))))
  '(web-mode-html-tag-bracket-face ((t (:foreground "unspecified-fg"))))
@@ -356,7 +372,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (terraform-mode blacken py-isort php-mode go-autocomplete jedi editorconfig go-mode ess session ruby-block ruby-electric scala-mode ac-python auto-install yaml-mode rainbow-mode auto-complete hl-line+)))
+    (magit flycheck terraform-mode blacken py-isort php-mode go-autocomplete jedi editorconfig go-mode ess session ruby-block ruby-electric scala-mode ac-python auto-install yaml-mode rainbow-mode auto-complete hl-line+)))
  '(session-use-package t nil (session)))
 
 
