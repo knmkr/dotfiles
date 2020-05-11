@@ -17,6 +17,7 @@
 .emacs.d/abbrev_defs
 .python-environments
 .emacs.d/network-security.data
+.emacs.d/transient/
 .emacs.d/elpy/
 
 *.elc
