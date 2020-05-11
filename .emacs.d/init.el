@@ -348,6 +348,7 @@
  '(magit-diffstat-added ((t (:foreground "green"))))
  '(magit-diffstat-removed ((t (:foreground "red"))))
  '(magit-hash ((t (:foreground "yellow"))))
+ '(magit-log-author ((t (:foreground "grey30"))))
  '(magit-section-highlight ((t nil)))
  '(match ((t (:background "yellow4"))))
  '(org-document-info ((t (:foreground "blue"))))
