@@ -329,6 +329,7 @@
  '(flymake-warning ((t (:background "color-19"))))
  '(fringe ((t (:background "black"))))
  '(highlight ((t (:background "darkseagreen4"))))
+ '(highlight-indentation-face ((t nil)))
  '(isearch ((t (:background "color-200" :foreground "brightblue"))))
  '(isearch-fail ((t (:background "color-88"))))
  '(magit-blame-date ((t (:foreground "brightblack"))) t)
