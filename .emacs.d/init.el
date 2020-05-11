@@ -1,4 +1,4 @@
-;; Emacs 24 or later
+;; Emacs 25 or later
 
 (require 'cl)
 ;; (add-to-list 'exec-path "/usr/local/bin")
