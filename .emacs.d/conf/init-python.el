@@ -135,5 +135,5 @@
   (elpy-enable)
 
   ;; https://elpy.readthedocs.io/en/latest/customization_tips.html#jumping-to-assignment
-  (define-key map (kbd "M-.") 'elpy-goto-assignment)
+  (define-key elpy-mode-map (kbd "M-.") 'elpy-goto-assignment)
   )
