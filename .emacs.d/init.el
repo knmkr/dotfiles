@@ -430,3 +430,9 @@
   ;; TODO: find jinja2 checker for django templates
   (setq-default flycheck-disabled-checkers '(html-tidy))
   )
+
+
+;; magit
+(when (require 'magit nil t)
+  (global-set-key (kbd "C-x C-m") 'magit-status)
+  )
