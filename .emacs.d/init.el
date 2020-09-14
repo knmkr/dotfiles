@@ -369,8 +369,11 @@
  '(smerge-mine ((t (:background "#4c4242"))) t)
  '(smerge-other ((t (:background "#424c42"))) t)
  '(trailing-whitespace ((t (:background "red4"))))
+ '(web-mode-block-control-face ((t (:inherit font-lock-keyword-face))))
+ '(web-mode-block-delimiter-face ((t (:inherit web-mode-html-tag-face))))
+ '(web-mode-html-attr-equal-face ((t (:foreground "brightwhite"))))
  '(web-mode-html-attr-name-face ((t (:foreground "hot pink"))))
- '(web-mode-html-tag-bracket-face ((t (:foreground "unspecified-fg"))))
+ '(web-mode-html-tag-bracket-face ((t (:inherit web-mode-html-tag-face))))
  '(widget-field ((t (:background "yellow4")))))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

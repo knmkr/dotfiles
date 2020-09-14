@@ -1,6 +1,8 @@
 (when (require 'web-mode nil t)
 
-  ;; (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+  (setq web-mode-engines-alist '(("django" . "\\.html\\'")))
+
   ;; (add-to-list 'auto-mode-alist '("\\.js?\\'" . web-mode))
   ;; (add-to-list 'auto-mode-alist '("\\.css?\\'" . web-mode))
 
