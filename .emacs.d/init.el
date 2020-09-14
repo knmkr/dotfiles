@@ -11,7 +11,7 @@
 
 ;; ELPA `M-x list-packages`
 (when (require 'package nil t)
-  (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
   (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
   (add-to-list 'package-archives '("ELPA" . "http://tromey.com/elpa/"))
   (package-initialize)
@@ -55,6 +55,7 @@
       helm-git-grep
       magit
       elpy
+      tide
       ))
 
   (dolist (package my/favorite-packages)
@@ -382,7 +383,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (elpy magit flycheck terraform-mode blacken py-isort php-mode go-autocomplete jedi editorconfig go-mode ess session ruby-block ruby-electric scala-mode ac-python auto-install yaml-mode rainbow-mode auto-complete hl-line+)))
+    (tide typescript-mode elpy magit flycheck terraform-mode blacken py-isort php-mode go-autocomplete jedi editorconfig go-mode ess session ruby-block ruby-electric scala-mode ac-python auto-install yaml-mode rainbow-mode auto-complete hl-line+)))
  '(session-use-package t nil (session)))
 
 
