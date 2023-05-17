@@ -1,6 +1,6 @@
 ;; Emacs 25 or later
 
-(require 'cl)
+(require 'cl-lib)
 ;; (add-to-list 'exec-path "/usr/local/bin")
 ;; (add-to-list 'exec-path "~/bin")
 (add-to-list 'load-path "~/.emacs.d/elisp")
@@ -11,9 +11,12 @@
 
 ;; ELPA `M-x list-packages`
 (when (require 'package nil t)
-  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-  (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
-  (add-to-list 'package-archives '("ELPA" . "http://tromey.com/elpa/"))
+  (setq package-archives
+      '(("GNU ELPA" . "https://elpa.gnu.org/packages/")
+        ("MELPA" . "https://melpa.org/packages/")))
+  ;; (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+  ;; (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+  ;; (add-to-list 'package-archives '("ELPA" . "http://tromey.com/elpa/"))
   (package-initialize)
 
   ;; [FIXME] To load packages, uncomment out below line
@@ -29,12 +32,12 @@
       yaml-mode
       css-mode
       ;; auto-install
-      ac-python
+      ;; ac-python
       scala-mode
       org
       ;; flymake-cursor
       ruby-electric
-      ruby-block
+      ;; ruby-block
       session
       ess
       go-mode
@@ -333,7 +336,7 @@
  '(highlight-indentation-face ((t nil)))
  '(isearch ((t (:background "color-200" :foreground "brightblue"))))
  '(isearch-fail ((t (:background "color-88"))))
- '(magit-blame-date ((t (:foreground "brightblack"))) t)
+ '(magit-blame-date ((t (:foreground "brightblack"))))
  '(magit-blame-heading ((t (:foreground "grey30" :underline t))))
  '(magit-branch-local ((t (:foreground "brightgreen"))))
  '(magit-branch-remote ((t (:foreground "brightred"))))
@@ -382,8 +385,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   (quote
-    (tide typescript-mode elpy magit flycheck terraform-mode blacken py-isort php-mode go-autocomplete jedi editorconfig go-mode ess session ruby-block ruby-electric scala-mode ac-python auto-install yaml-mode rainbow-mode auto-complete hl-line+)))
+   '(tide typescript-mode elpy magit flycheck terraform-mode blacken py-isort php-mode go-autocomplete jedi editorconfig go-mode ess session ruby-electric scala-mode auto-install yaml-mode rainbow-mode auto-complete hl-line+))
  '(session-use-package t nil (session)))
 
 
