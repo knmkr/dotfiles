@@ -130,10 +130,30 @@
 ;;   )
 
 
-;; Elpy
-(when (require 'elpy nil t)
-  (elpy-enable)
+;; ;; Elpy
+;; (when (require 'elpy nil t)
+;;   (elpy-enable)
 
-  ;; https://elpy.readthedocs.io/en/latest/customization_tips.html#jumping-to-assignment
-  (define-key elpy-mode-map (kbd "M-.") 'elpy-goto-assignment)
-  )
+;;   ;; https://elpy.readthedocs.io/en/latest/customization_tips.html#jumping-to-assignment
+;;   (define-key elpy-mode-map (kbd "M-.") 'elpy-goto-assignment)
+;;   )
+
+
+;; ;; importmagic
+;; ;; https://github.com/anachronic/importmagic.el
+;; (when (require 'importmagic nil t)
+;;   (add-hook 'python-mode-hook 'importmagic-mode)
+;;   ;; FIXME
+;;   (setq importmagic-python-interpreter "/Users/ken/.local/share/virtualenvs/.emacs.d-et_VfsHo/bin/python")
+
+;;   (define-key importmagic-mode-map (kbd "M-i") 'importmagic-fix-symbol-at-point)
+;;   )
+
+
+;; Inset import pdb; pdb.set_trace() on C-x, C-p
+;; https://gist.github.com/amitsaha/7717679
+(defun pdb-set-trace ()
+  ;; http://www.emacswiki.org/emacs/InteractiveFunction
+  (interactive)
+  (insert "import pdb; pdb.set_trace()\n"))
+(global-set-key [(control ?x) (control ?p)] 'pdb-set-trace)

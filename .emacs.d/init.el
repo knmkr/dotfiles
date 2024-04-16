@@ -57,7 +57,7 @@
       helm
       helm-git-grep
       magit
-      elpy
+      ;; elpy
       tide
       ))
 
@@ -385,7 +385,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(tide typescript-mode elpy magit flycheck terraform-mode blacken py-isort php-mode go-autocomplete jedi editorconfig go-mode ess session ruby-electric scala-mode auto-install yaml-mode rainbow-mode auto-complete hl-line+))
+   '(elpygen tide typescript-mode magit flycheck terraform-mode blacken py-isort php-mode go-autocomplete jedi editorconfig go-mode ess session ruby-electric scala-mode auto-install yaml-mode rainbow-mode auto-complete hl-line+))
  '(session-use-package t nil (session)))
 
 
