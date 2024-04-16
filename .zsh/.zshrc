@@ -149,7 +149,7 @@ setopt interactivecomments     # コマンドライン実行時もコメント�
 alias be='bundle exec'
 
 # emacs
-alias e="emacs"
+alias e="emacs -nw"
 
 
 # Utils
