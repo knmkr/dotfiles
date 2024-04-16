@@ -18,12 +18,17 @@ export LESSOPEN="| ${BREW_HOME}/bin/src-hilite-lesspipe.sh %s"
 export PATH=${BREW_HOME}/share/git-core/contrib/diff-highlight:$PATH
 
 # Python
-if [ -f ${BREW_HOME}/bin/virtualenvwrapper.sh ]; then
-    export WORKON_HOME=${HOME}/.virtualenvs
-    export VIRTUALENVWRAPPER_PYTHON=${BREW_HOME}/bin/python3
-    source ${BREW_HOME}/bin/virtualenvwrapper.sh
-fi
-export PYTHONSTARTUP=~/.pythonstartup
+
+# # virtualenvwrapper
+# if [ -f ${BREW_HOME}/bin/virtualenvwrapper.sh ]; then
+#     export WORKON_HOME=${HOME}/.virtualenvs
+#     export VIRTUALENVWRAPPER_PYTHON=${BREW_HOME}/bin/python3
+#     source ${BREW_HOME}/bin/virtualenvwrapper.sh
+# fi
+# export PYTHONSTARTUP=~/.pythonstartup
+
+# pipenv
+export PIPENV_IGNORE_VIRTUALENVS=1
 
 
 # tmux
@@ -80,3 +85,33 @@ function git-cleanup-local-branches() {
     git branch -d $(git branch --merged)
     git branch -vv
 }
+
+function rotate-aws-access-key() {
+    if [ ! $1 ] || [ ! $2 ]; then
+        echo "Usage: $0 <username> <profile>"
+    else
+        OLD_KEY=$(aws iam list-access-keys --output text --query 'AccessKeyMetadata[0].AccessKeyId' --user-name $1 --profile $2)
+        OUTPUT=$(aws iam create-access-key --output text --query 'AccessKey.[AccessKeyId,SecretAccessKey]' --user-name $1 --profile $2)
+        printf "%s\n%s\n%s\n%s\n" $(echo ${OUTPUT}| cut -f1) $(echo ${OUTPUT}| cut -f2) "" ""| aws configure --profile $2; echo
+        printf "%s\n%s\n%s\n%s\n" "" "" "" ""| aws configure --profile $2; echo
+        echo aws iam update-access-key --access-key-id ${OLD_KEY} --status Inactive --user-name $1 --profile $2
+        echo aws iam delete-access-key --access-key-id ${OLD_KEY} --user-name $1 --profile $2
+        echo aws iam list-access-keys --user-name $1 --profile $2
+    fi
+}
+
+
+# GNU
+# brew install coreutils gawk gnu-sed gnu-tar findutils
+alias head="ghead"
+alias tail="gtail"
+alias sort="gsort"
+alias grep="ggrep"
+alias paste="gpaste"
+alias date="gdate"
+
+alias awk="gawk"
+alias sed="gsed"
+alias tar="gtar"
+
+alias xargs="gxargs"

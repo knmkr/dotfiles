@@ -16,6 +16,7 @@
 [core]
 	editor = emacs
 	excludesfile = ~/.gitignore_global
+	ignorecase = true
 
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
@@ -34,3 +35,5 @@
 [http]
 	sslVerify = false
 	postBuffer = 524288000
+[pull]
+	rebase = false
